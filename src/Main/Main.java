@@ -8,7 +8,7 @@ public class Main extends Application {
 	@Override
 	public void start(Stage arg0) throws Exception {
 		// TODO Auto-generated method stub
-		int i = 0 ; 
+		int i = 1 ; 
 		
 		
 	}
