@@ -16,6 +16,7 @@ public class mainMenu extends VBox{
 		play.setPrefHeight(50);
 		play.setStyle(
 			"-fx-text-fill: white; -fx-font-weight: bold; -fx-font-family: \"Arial Narrow\"; -fx-background-color: darkgreen;");
+		play.setPrefHeight(800);
 	}
 
 }
