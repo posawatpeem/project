@@ -39,22 +39,27 @@
       </ImageView>
       <Button graphicTextGap="5.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="250.0" style="-fx-background-color: #E5e5e5;" text="How to Play" textFill="WHITE" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="5">
          <font>
-            <Font name="Chalkboard" size="25.0" />
+            <Font name="Kenney Future Regular" size="19.0" />
          </font>
       </Button>
       <Button alignment="CENTER" contentDisplay="TOP" graphicTextGap="5.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="250.0" style="-fx-background-color: #E5E5E5;" text="Play" textFill="WHITE" wrapText="true" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER">
          <font>
-            <Font name="Chalkboard" size="26.0" />
+            <Font name="Kenney Future Regular" size="26.0" />
          </font>
       </Button>
       <Button graphicTextGap="5.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="250.0" style="-fx-background-color: #e5e5e5;" text="Exit" textFill="WHITE" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="6">
          <font>
-            <Font name="Chalkboard SE Light" size="25.0" />
+            <Font name="Kenney Future Regular" size="28.0" />
          </font>
       </Button>
-      <Text depthTest="DISABLE" fill="#f9fbfc" stroke="#80bdbf" strokeType="OUTSIDE" strokeWidth="3.0" text="Crossy Road" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+      <Text depthTest="DISABLE" fill="#f9fbfc" stroke="#8fdfe1" strokeType="OUTSIDE" strokeWidth="3.0" style="-fx-font-family: url('/Users/posawat/Library/Fonts/Users/posawat/Library/Fonts');" text="Foxky" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.halignment="RIGHT" GridPane.rowIndex="1" GridPane.valignment="BOTTOM">
          <font>
-            <Font name="Chalkboard" size="55.0" />
+            <Font name="Kenney Pixel Regular" size="96.0" />
+         </font>
+      </Text>
+      <Text fill="#fcf5f5" stroke="#6dcdda" strokeType="OUTSIDE" strokeWidth="3.0" text="Road" textAlignment="RIGHT" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="TOP">
+         <font>
+            <Font name="Kenney Pixel Regular" size="96.0" />
          </font>
       </Text>
    </children>
