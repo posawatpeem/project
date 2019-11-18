@@ -12,7 +12,7 @@ public class Buttons extends Button{
 	private static final int BUTTON_WIDTH = 230;
 
 	private final String BUTTON_PRESSED_STYLE = "-fx-background-color: transparent; -fx-background-image: url('"
-			+ ClassLoader.getSystemResource("blue_button01.png").toString() + "');";
+			+ ClassLoader.getSystemResource("white_button01.png").toString() + "');";
 	private final String BUTTON_FREE_STYLE = "-fx-background-color: transparent; -fx-background-image: url('"
 			+ ClassLoader.getSystemResource("blue_button00.png").toString() + "');";
 
