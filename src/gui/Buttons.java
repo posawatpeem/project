@@ -1,12 +1,15 @@
 package gui;
 
+import javafx.event.EventHandler;
 import javafx.scene.control.Button;
+import javafx.scene.input.MouseButton;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Font;
 
 public class Buttons extends Button{
 	
-	private static final int BUTTON_HEIGHT = 52;
-	private static final int BUTTON_WIDTH = 250;
+	private static final int BUTTON_HEIGHT = 50;
+	private static final int BUTTON_WIDTH = 230;
 
 	private final String BUTTON_PRESSED_STYLE = "-fx-background-color: transparent; -fx-background-image: url('"
 			+ ClassLoader.getSystemResource("blue_button01.png").toString() + "');";
@@ -19,6 +22,7 @@ public class Buttons extends Button{
 		setPrefHeight(BUTTON_HEIGHT);
 		setButtonsFont();
 		setStyle(BUTTON_FREE_STYLE);
+		initializedButton();
 		
 	}
 
@@ -29,15 +33,37 @@ public class Buttons extends Button{
 	private void setButtonPressedStyle() {
 		setStyle(BUTTON_PRESSED_STYLE);
 		setPrefHeight(45);
+		setPrefWidth(230);
 		setLayoutY(getLayoutY() + 4);
 	}
 
 	private void setButtonReleasedStyle() {
 		setStyle(BUTTON_FREE_STYLE);
-		setPrefHeight(49);
+		setPrefHeight(50);
+		setPrefWidth(250);
 		setLayoutY(getLayoutY() - 4);
 	}
-
+	
+	private void initializedButton() {
+		
+		setOnMousePressed(new EventHandler<MouseEvent>() {
+			@Override
+			public void handle(MouseEvent event) {
+				if (event.getButton().equals(MouseButton.PRIMARY)) {
+					setButtonPressedStyle();
+				}
+			}
+		});
+		setOnMouseReleased(new EventHandler<MouseEvent>() {
+			@Override
+			public void handle(MouseEvent event) {
+				if (event.getButton().equals(MouseButton.PRIMARY)) {
+					setButtonReleasedStyle();
+				}
+			}
+		});
+		
+	}
 	
 
 }
