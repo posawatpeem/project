@@ -1,11 +1,14 @@
 package base;
 
+
 import entity.Entity;
 import javafx.animation.Timeline;
 import javafx.scene.Group;
 import javafx.scene.image.ImageView;
 
 public abstract class Fox  extends Entity{
+	
+	private static final int Velocity = 5 ; 
 	
 	protected Group foxGroup ; 
 	protected boolean haveLive ; 
@@ -17,17 +20,24 @@ public abstract class Fox  extends Entity{
 		this.haveLive = true ; 
 	}
 	
-	public abstract void moveUp() ; 
+	public void moveUp() {
+		foxGroup.setLayoutY(foxGroup.getLayoutY() - Velocity);
+	}
 	
-	public abstract void moveDown() ; 
+	public void moveDown() {
+		foxGroup.setLayoutY(foxGroup.getLayoutY() + Velocity);
+	}
 	
-	public abstract void moveRight() ;
+	public void moveRight() {
+		foxGroup.setLayoutX(foxGroup.getLayoutX() + Velocity);
+	}
+
+	public void moveLeft() {
+		foxGroup.setLayoutX(foxGroup.getLayoutX() - Velocity);
+	}
 	
 	public Group getFoxGroup() {
 		return foxGroup;
 	}
 
-	public abstract void moveLeft() ; 
-	
-	
 }

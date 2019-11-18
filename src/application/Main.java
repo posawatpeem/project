@@ -1,5 +1,6 @@
 package application;
 
+import GameView.Game;
 import base.Fox;
 import entity.Player;
 import javafx.application.Application;
@@ -16,37 +17,10 @@ public class Main extends Application {
  @Override
  public void start(Stage primaryStage) throws Exception {
   // TODO Auto-generated method stub
-	 Resloader.load(); 
-	 AnchorPane gamePane = new AnchorPane();
-	 Player player = new Player() ; 
-	 gamePane.getChildren().add(player.getFoxGroup()) ; 
-	
+	 new Game() ;
 	 
-	 Scene gameScene =new Scene(gamePane,400,600) ; 
-	 gameScene.setOnKeyPressed(new EventHandler<KeyEvent>() {
-
-		@Override
-		public void handle(KeyEvent event) {
-			// TODO Auto-generated method stub
-			if (event.getCode() == KeyCode.UP) {
-				player.moveUp();
-			}
-			else if (event.getCode() == KeyCode.DOWN) {
-				player.moveDown();
-			}
-			else if (event.getCode() == KeyCode.LEFT) {
-				player.moveLeft();
-			}
-			else if (event.getCode() == KeyCode.RIGHT) {
-				player.moveRight();
-			}
-		}
-		 
-	});
-	 
-	 primaryStage = new Stage() ; 
-	 primaryStage.setTitle("20_CenturyFox");
-	 primaryStage.setScene(gameScene);
+	 primaryStage = Game.gameStage ; 
+	 primaryStage.setTitle("20 Century Fox");
 	 primaryStage.show();
 		
   

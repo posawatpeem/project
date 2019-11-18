@@ -9,12 +9,15 @@ public class Player extends Fox  {
 
 	private ImageView fox1 ; 
 	
-	private static final int Velocity = 5 ; 
+	
 	private boolean outUp ; 
 	private boolean outDown;
 	private boolean outRight; 
 	private boolean outLeft ; 
 	
+	public Player() {
+		super() ; 
+	}
 	public void checkOutScene() {
 		if (foxGroup.getLayoutY()<0) {
 			this.outDown =true ; 
@@ -37,89 +40,6 @@ public class Player extends Fox  {
 			this.outLeft = false ; 
 		}
 	}
-	@Override
-	public void moveUp() {
-		// TODO Auto-generated method stub
-		moveThread = new Thread(new Runnable() {
-
-			@Override
-			public void run() {
-				// TODO Auto-generated method stub
-				try {
-					for(int i = 0 ; i < 5 ;i++) {
-						foxGroup.setLayoutY(foxGroup.getLayoutY() - Velocity);
-						Thread.sleep(30);
-					}
-				}catch(InterruptedException e) {
-					e.printStackTrace();
-				}
-			}
-		});
-		moveThread.start();
-	}
-
-	@Override
-	public void moveDown() {
-		// TODO Auto-generated method stub
-		moveThread = new Thread(new Runnable() {
-
-			@Override
-			public void run() {
-				// TODO Auto-generated method stub
-				try {
-					for(int i = 0 ; i < 5 ;i++) {
-						foxGroup.setLayoutY(foxGroup.getLayoutY() + Velocity);
-						Thread.sleep(15);
-					}
-				}catch(InterruptedException e) {
-					e.printStackTrace();
-				}
-			}
-		});
-		moveThread.start();
-	}
-
-	@Override
-	public void moveRight() {
-		// TODO Auto-generated method stub
-		moveThread = new Thread(new Runnable() {
-
-			@Override
-			public void run() {
-				// TODO Auto-generated method stub
-				try {
-					for(int i = 0 ; i < 5 ;i++) {
-						foxGroup.setLayoutX(foxGroup.getLayoutX() + Velocity);
-						Thread.sleep(15);
-					}
-				}catch(InterruptedException e) {
-					e.printStackTrace();
-				}
-			}
-		});
-		moveThread.start();
-	}
-
-	@Override
-	public void moveLeft() {
-		// TODO Auto-generated method stub
-		moveThread = new Thread(new Runnable() {
-
-			@Override
-			public void run() {
-				// TODO Auto-generated method stub
-				try {
-					for(int i = 0 ; i < 5 ;i++) {
-						foxGroup.setLayoutX(foxGroup.getLayoutX() - Velocity);
-						Thread.sleep(15);
-					}
-				}catch(InterruptedException e) {
-					e.printStackTrace();
-				}
-			}
-		});
-		moveThread.start();
-	}
 
 	@Override
 	public void setGc() {
@@ -127,7 +47,7 @@ public class Player extends Fox  {
 		this.fox1 = Resloader.fox ; 
 		this.fox1.setFitHeight(50);
 		this.fox1.setFitWidth(50);
-		this.foxGroup = new Group(Resloader.fox) ; 
+		this.foxGroup = new Group(fox1) ; 
 		
 	}
 
