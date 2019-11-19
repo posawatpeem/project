@@ -19,28 +19,40 @@ public class Player extends Fox  {
 		super() ; 
 	}
 	public void checkOutScene() {
-		if (foxGroup.getLayoutY()<0) {
+		if (foxGroup.getLayoutY()>550) {
 			this.outDown =true ; 
 		}else {
 			this.outDown = false ; 
 		}
-		if(foxGroup.getLayoutY() > 600) {
+		if(foxGroup.getLayoutY()<5) {
 			this.outUp = true ; 
 		}else {
 			this.outUp= false ; 
 		}
-		if(foxGroup.getLayoutX() < 0) {
-			this.outLeft = true ; 
+		if(foxGroup.getLayoutX()>350) {
+			this.outRight = true ; 
 		}else {
-			this.outLeft =false ; 
+			this.outRight =false ; 
 		}
-		if(foxGroup.getLayoutX() > 400) {
+		if(foxGroup.getLayoutX()<0) {
 			this.outLeft =true; 
 		}else {
 			this.outLeft = false ; 
 		}
 	}
 
+	public boolean isOutUp() {
+		return outUp;
+	}
+	public boolean isOutDown() {
+		return outDown;
+	}
+	public boolean isOutRight() {
+		return outRight;
+	}
+	public boolean isOutLeft() {
+		return outLeft;
+	}
 	@Override
 	public void setGc() {
 		// TODO Auto-generated method stub

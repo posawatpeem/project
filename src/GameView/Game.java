@@ -31,21 +31,29 @@ public class Game {
 		 up = down = right = left = false ; 
 		 createKeyListener();
 		 Timer = new AnimationTimer() {
-
 			@Override
 			public void handle(long arg0) {
 				// TODO Auto-generated method stub
+				player.checkOutScene();
 				if(up) {
-					player.moveUp();
+					if (!player.isOutUp()) {
+						player.moveUp();
+					}
 				}
 				if(down) {
-					player.moveDown();
+					if(!player.isOutDown()) {
+						player.moveDown();
+					}
 				}
 				if(right) {
-					player.moveRight();
+					if(!player.isOutRight()) {
+						player.moveRight();
+					}
 				}
 				if(left) {
-					player.moveLeft();
+					if(!player.isOutLeft()) {
+						player.moveLeft();
+					}
 				}
 			}
 			 
