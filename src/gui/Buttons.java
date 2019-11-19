@@ -62,6 +62,21 @@ public class Buttons extends Button{
 				}
 			}
 		});
+		setOnMouseEntered(new EventHandler<MouseEvent>() {
+			@Override
+			public void handle(MouseEvent event) {
+				setPrefHeight(48);
+				setPrefWidth(240);
+			}
+		});
+
+		setOnMouseExited(new EventHandler<MouseEvent>() {
+			@Override
+			public void handle(MouseEvent event) {
+				setPrefHeight(50);
+				setPrefWidth(250);
+			}
+		});
 		
 	}
 	
