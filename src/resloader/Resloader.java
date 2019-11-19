@@ -1,5 +1,7 @@
 package resloader;
 
+import java.net.URISyntaxException;
+
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
@@ -11,10 +13,16 @@ public class Resloader {
 	public static ImageView car ; 
 	public static ImageView river ; 
 	public static ImageView road ; 
+	public static Image MAIN_BG;
 	
 	public static void load() {
 		
 		fox = new ImageView(new Image(ClassLoader.getSystemResource("fox1.png").toString())) ; 
+		try {
+			MAIN_BG = new Image(ClassLoader.getSystemResource("bg.jpg").toURI().toString());
+		} catch (URISyntaxException e) {
+			e.printStackTrace();
+		}
 	}
 	
 }

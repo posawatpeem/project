@@ -6,6 +6,7 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundImage;
 import javafx.scene.layout.BackgroundPosition;
@@ -19,7 +20,7 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import resloader.Resloader;
 
-public class mainMenu extends GridPane{
+public class mainMenu extends AnchorPane {
 	
 	private Buttons playButt;
 	private Buttons howToButt;
