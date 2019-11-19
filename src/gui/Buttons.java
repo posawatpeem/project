@@ -10,7 +10,7 @@ import javafx.scene.text.Font;
 public class Buttons extends Button{
 	
 	private static final int BUTTON_HEIGHT = 50;
-	private static final int BUTTON_WIDTH = 230;
+	private static final int BUTTON_WIDTH = 250;
 
 	private final String BUTTON_PRESSED_STYLE = "-fx-background-color: transparent; -fx-background-image: url('"
 			+ ClassLoader.getSystemResource("white_button01.png").toString() + "');";
