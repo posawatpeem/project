@@ -2,6 +2,7 @@ package gui;
 
 import javafx.event.EventHandler;
 import javafx.scene.control.Button;
+import javafx.scene.effect.DropShadow;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Font;
@@ -44,7 +45,7 @@ public class Buttons extends Button{
 	
 	private void initializedButton() {
 		
-		setOnMouseEntered(new EventHandler<MouseEvent>() {
+		setOnMousePressed(new EventHandler<MouseEvent>() {
 			@Override
 			public void handle(MouseEvent event) {
 				setPrefHeight(48);
@@ -52,7 +53,7 @@ public class Buttons extends Button{
 			}
 		});
 
-		setOnMouseExited(new EventHandler<MouseEvent>() {
+		setOnMouseReleased(new EventHandler<MouseEvent>() {
 			@Override
 			public void handle(MouseEvent event) {
 				setPrefHeight(50);
@@ -60,6 +61,19 @@ public class Buttons extends Button{
 			}
 		});
 		
+		setOnMouseEntered(new EventHandler<MouseEvent>() {
+			@Override
+			public void handle(MouseEvent event) {
+				setEffect(new DropShadow());
+			}
+		});
+
+		setOnMouseExited(new EventHandler<MouseEvent>() {
+			@Override
+			public void handle(MouseEvent event) {
+				setEffect(null);
+			}
+		});
 	}
 	
 

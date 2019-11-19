@@ -17,6 +17,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import resloader.Resloader;
 
 public class mainMenu extends GridPane{
 	
@@ -31,6 +32,7 @@ public class mainMenu extends GridPane{
 		this.setPrefHeight(600);
 		
 		try {
+			
 			MAIN_BG = new Image(ClassLoader.getSystemResource("bg.jpg").toURI().toString());
 		} catch (URISyntaxException e) {
 			e.printStackTrace();
@@ -40,7 +42,7 @@ public class mainMenu extends GridPane{
                 BackgroundRepeat.NO_REPEAT,
                 BackgroundRepeat.NO_REPEAT,
                 BackgroundPosition.DEFAULT,
-                BackgroundSize.DEFAULT);;
+                new BackgroundSize(1.0, 1.0, true, true, false, false));;
 		this.setBackground(new Background(wallpaper));
 		
 		Text scenetitle1 = new Text("Foxxy");
@@ -81,8 +83,7 @@ public class mainMenu extends GridPane{
 		this.exitButt.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent event) {
-				Stage stage = (Stage) exitButt.getScene().getWindow();
-				stage.close();
+				System.exit(0);
 			}
 		});
 	}
