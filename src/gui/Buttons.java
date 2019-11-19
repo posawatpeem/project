@@ -34,34 +34,16 @@ public class Buttons extends Button{
 		setStyle(BUTTON_PRESSED_STYLE);
 		setPrefHeight(45);
 		setPrefWidth(230);
-		setLayoutY(getLayoutY() + 4);
 	}
 
 	private void setButtonReleasedStyle() {
 		setStyle(BUTTON_FREE_STYLE);
 		setPrefHeight(50);
 		setPrefWidth(250);
-		setLayoutY(getLayoutY() - 4);
 	}
 	
 	private void initializedButton() {
 		
-		setOnMousePressed(new EventHandler<MouseEvent>() {
-			@Override
-			public void handle(MouseEvent event) {
-				if (event.getButton().equals(MouseButton.PRIMARY)) {
-					setButtonPressedStyle();
-				}
-			}
-		});
-		setOnMouseReleased(new EventHandler<MouseEvent>() {
-			@Override
-			public void handle(MouseEvent event) {
-				if (event.getButton().equals(MouseButton.PRIMARY)) {
-					setButtonReleasedStyle();
-				}
-			}
-		});
 		setOnMouseEntered(new EventHandler<MouseEvent>() {
 			@Override
 			public void handle(MouseEvent event) {

@@ -1,28 +1,50 @@
 package gui;
 
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.scene.control.Button;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
 
 public class mainMenu extends GridPane{
+	
+	private Buttons playButt;
+	private Buttons howToButt;
+	private Buttons exitButt;
 	
 	public mainMenu () {
 		this.setPrefWidth(400);
 		this.setPrefHeight(600);
 		
-		Button play = new Button("Play");
-		Button howTo = new Button("How to play");
-		Button exit = new Button("Exit");
+		this.playButt = new Buttons("PLAY");
+		this.howToButt = new Buttons("HOW TO PLAY");
+		this.exitButt = new Buttons("EXIT");
 		
-		play.setPrefWidth(250);
-		play.setPrefHeight(52);
-		howTo.setPrefWidth(250);
-		howTo.setPrefHeight(52);
-		exit.setPrefWidth(250);
-		exit.setPrefHeight(52);
 		
-		this.setStyle("-fx-background-image: url('/Users/posawat/eclipse/eclipse-workspace/project-2019-1-20_centuryfox/res')");
+	}
+	
+	private void initializeMain() {
 		
+		this.playButt.setOnAction(new EventHandler<ActionEvent>() {
+			@Override
+			public void handle(ActionEvent event) {
+				
+			}
+		});
+		this.howToButt.setOnAction(new EventHandler<ActionEvent>() {
+			@Override
+			public void handle(ActionEvent event) {
+				
+			}
+		});
+		this.exitButt.setOnAction(new EventHandler<ActionEvent>() {
+			@Override
+			public void handle(ActionEvent event) {
+				Stage stage = (Stage) exitButt.getScene().getWindow();
+				stage.close();
+			}
+		});
 	}
 
 }
