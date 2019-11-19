@@ -1,5 +1,6 @@
 package resloader;
 
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
 public class Resloader {
@@ -12,7 +13,8 @@ public class Resloader {
 	public static ImageView road ; 
 	
 	public static void load() {
-		fox = new ImageView(ClassLoader.getSystemResource("fox1.png").toString()) ; 
+		
+		fox = new ImageView(new Image(ClassLoader.getSystemResource("fox1.png").toString())) ; 
 	}
 	
 }
