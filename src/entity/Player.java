@@ -9,7 +9,6 @@ public class Player extends Fox  {
 
 	private ImageView fox1 ; 
 	
-	
 	private boolean outUp ; 
 	private boolean outDown;
 	private boolean outRight; 
@@ -18,6 +17,7 @@ public class Player extends Fox  {
 	public Player() {
 		super() ; 
 	}
+	
 	public void checkOutScene() {
 		if (foxGroup.getLayoutY()>550) {
 			this.outDown =true ; 
