@@ -1,8 +1,9 @@
 package application;
 
-import GameView.Game;
+
 import base.Fox;
 import entity.Player;
+import gui.Game;
 import gui.mainMenu;
 import javafx.application.Application;
 import javafx.event.EventHandler;
@@ -18,12 +19,16 @@ public class Main extends Application {
  @Override
  public void start(Stage primaryStage) throws Exception {
   // TODO Auto-generated method stub
-	 new Game() ;
-	 new mainMenu();
-	 primaryStage = Game.gameStage ; 
-	 primaryStage.setTitle("20 Century Fox");
-	 primaryStage.show();
-		
+	 try {
+		 new Game() ;
+		 primaryStage = Game.gameStage ; 
+		 primaryStage.setTitle("20 Century Fox");
+		 primaryStage.show();
+			
+	 }catch(Exception e) {
+		 e.printStackTrace();
+	 }
+	 
   
  }
  

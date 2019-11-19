@@ -1,7 +1,6 @@
-package GameView;
+package gui;
 
 import entity.Player;
-import javafx.animation.Animation;
 import javafx.animation.AnimationTimer;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
@@ -12,7 +11,6 @@ import javafx.stage.Stage;
 import resloader.Resloader;
 
 public class Game {
-	
 	private AnchorPane gamePane ; 
 	private Scene gameScene ; 
 	public static Stage gameStage ; 
@@ -96,9 +94,8 @@ public class Game {
 			}
 			 
 		});
-		
-		gameScene.setOnKeyReleased(new EventHandler<KeyEvent>() {
 
+		gameScene.setOnKeyReleased(new EventHandler<KeyEvent>() {
 			@Override
 			public void handle(KeyEvent event) {
 				// TODO Auto-generated method stub
