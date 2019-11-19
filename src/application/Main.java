@@ -3,6 +3,7 @@ package application;
 import GameView.Game;
 import base.Fox;
 import entity.Player;
+import gui.mainMenu;
 import javafx.application.Application;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
@@ -18,7 +19,7 @@ public class Main extends Application {
  public void start(Stage primaryStage) throws Exception {
   // TODO Auto-generated method stub
 	 new Game() ;
-	 
+	 new mainMenu();
 	 primaryStage = Game.gameStage ; 
 	 primaryStage.setTitle("20 Century Fox");
 	 primaryStage.show();

@@ -29,15 +29,8 @@ public class mainMenu extends AnchorPane {
 	
 	public mainMenu () {
 		
-		this.setPrefWidth(400);
 		this.setPrefHeight(600);
-		
-		try {
-			
-			MAIN_BG = new Image(ClassLoader.getSystemResource("bg.jpg").toURI().toString());
-		} catch (URISyntaxException e) {
-			e.printStackTrace();
-		}
+		this.setPrefWidth(400);
 		
 		BackgroundImage wallpaper = new BackgroundImage(MAIN_BG,
                 BackgroundRepeat.NO_REPEAT,
