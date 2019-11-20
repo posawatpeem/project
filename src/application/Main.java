@@ -20,9 +20,8 @@ public class Main extends Application {
  public void start(Stage primaryStage) throws Exception {
   // TODO Auto-generated method stub
 	 try {
-		 new Game() ;
-		 primaryStage = Game.gameStage ; 
-		 primaryStage.setTitle("20 Century Fox");
+		 new mainMenu() ;
+		 primaryStage = mainMenu.mainStage ; 
 		 primaryStage.show();
 			
 	 }catch(Exception e) {
