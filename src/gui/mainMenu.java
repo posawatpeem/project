@@ -32,7 +32,7 @@ public class mainMenu extends AnchorPane {
 	private Text scenetitle1;
 	private Text scenetitle2;
 	private AnchorPane mainPane;
-	private AnchorPane titlePane;
+	private VBox titlePane;
 	private VBox buttonPane;
 	public static Stage mainStage;
 	public static final int Width = 400 ; 
@@ -104,21 +104,20 @@ public class mainMenu extends AnchorPane {
 		this.scenetitle1 = new Text("Foxxy");
 		this.scenetitle2 = new Text("Road.");
 		
-		titlePane = new AnchorPane();
+		titlePane = new VBox();
+		titlePane.setPrefHeight(300);
+		titlePane.setPrefWidth(600);
 		
-		this.scenetitle1.setFont(Font.loadFont("Kenney_Future.ttf",96));
+		this.scenetitle1.setFont(Font.loadFont(ClassLoader.getSystemResource("Kenney_Future.ttf").toString(), 80));
 		this.scenetitle1.setFill(Color.WHITE);
 		this.scenetitle1.setStrokeWidth(3);
 		this.scenetitle1.setStroke(Color.LIGHTGRAY);
-		this.scenetitle1.setLayoutX(20);
-		this.scenetitle1.setLayoutY(20);
 		
-		this.scenetitle2.setFont(Font.loadFont("Kenney_Future.ttf",96));
+		
+		this.scenetitle2.setFont(Font.loadFont(ClassLoader.getSystemResource("Kenney_Future.ttf").toString(), 70));
 		this.scenetitle2.setFill(Color.WHITE);
 		this.scenetitle2.setStrokeWidth(3);
 		this.scenetitle2.setStroke(Color.LIGHTGRAY);
-		this.scenetitle2.setLayoutX(40);
-		this.scenetitle2.setLayoutY(60);
 		
 		titlePane.getChildren().addAll(this.scenetitle1,this.scenetitle2);
 		
