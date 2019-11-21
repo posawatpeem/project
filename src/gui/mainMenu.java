@@ -109,18 +109,22 @@ public class mainMenu extends AnchorPane {
 		
 		this.scenetitle1.setFont(Font.loadFont(ClassLoader.getSystemResource("Kenney_Pixel.ttf").toString(), 150));
 		this.scenetitle1.setFill(Color.WHITE);
-		this.scenetitle1.setStrokeWidth(3);
-		this.scenetitle1.setStroke(Color.LIGHTGRAY);
+		this.scenetitle1.setStrokeWidth(4);
+		this.scenetitle1.setStroke(Color.BLACK);
+		this.scenetitle1.setLayoutX(50);
+		this.scenetitle1.setLayoutY(200);
 		
-		
-		this.scenetitle2.setFont(Font.loadFont(ClassLoader.getSystemResource("Kenney_Pixel.ttf").toString(), 90));
+		this.scenetitle2.setFont(Font.loadFont(ClassLoader.getSystemResource("Kenney_Pixel.ttf").toString(), 120));
 		this.scenetitle2.setFill(Color.WHITE);
-		this.scenetitle2.setStrokeWidth(3);
-		this.scenetitle2.setStroke(Color.LIGHTGRAY);
+		this.scenetitle2.setStrokeWidth(4);
+		this.scenetitle2.setStroke(Color.BLACK);
+		this.scenetitle2.setLayoutX(180);
+		this.scenetitle2.setLayoutY(270);
 		
-		titlePane.getChildren().addAll(this.scenetitle1,this.scenetitle2);
-		titlePane.setAlignment(Pos.CENTER);
-		mainPane.getChildren().add(titlePane);
+		
+		//titlePane.getChildren().addAll(this.scenetitle1,this.scenetitle2);
+		//titlePane.setAlignment(Pos.CENTER);
+		mainPane.getChildren().addAll(this.scenetitle1,this.scenetitle2);
 		
 	}
 	
