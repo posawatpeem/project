@@ -26,9 +26,9 @@ import resloader.Resloader;
 
 public class mainMenu extends AnchorPane {
 	
-	private Button playBtn;
-	private Button howToBtn;
-	private Button exitBtn;
+	private Buttons playBtn;
+	private Buttons howToBtn;
+	private Buttons exitBtn;
 	private Text scenetitle1;
 	private Text scenetitle2;
 	private AnchorPane mainPane;
@@ -83,9 +83,9 @@ public class mainMenu extends AnchorPane {
 
 	private void initializeButton() {
 		
-		this.playBtn = new Button("PLAY");
-		this.howToBtn = new Button("HOW TO PLAY");
-		this.exitBtn = new Button("EXIT");
+		this.playBtn = new Buttons("PLAY");
+		this.howToBtn = new Buttons("HOW TO PLAY");
+		this.exitBtn = new Buttons("EXIT");
 		
 		buttonPane = new VBox(8);
 		buttonPane.setPadding(new Insets(10));
@@ -105,8 +105,8 @@ public class mainMenu extends AnchorPane {
 		this.scenetitle2 = new Text("Road.");
 		
 		titlePane = new VBox();
-		titlePane.setPrefHeight(300);
-		titlePane.setPrefWidth(600);
+		titlePane.setPrefHeight(250);
+		titlePane.setPrefWidth(400);
 		
 		this.scenetitle1.setFont(Font.loadFont(ClassLoader.getSystemResource("Kenney_Future.ttf").toString(), 80));
 		this.scenetitle1.setFill(Color.WHITE);
@@ -120,7 +120,7 @@ public class mainMenu extends AnchorPane {
 		this.scenetitle2.setStroke(Color.LIGHTGRAY);
 		
 		titlePane.getChildren().addAll(this.scenetitle1,this.scenetitle2);
-		
+		titlePane.setAlignment(Pos.CENTER);
 		mainPane.getChildren().add(titlePane);
 		
 	}

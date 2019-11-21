@@ -12,17 +12,14 @@ public class Buttons extends Button{
 	private static final int BUTTON_HEIGHT = 50;
 	private static final int BUTTON_WIDTH = 250;
 
-	private final String BUTTON_PRESSED_STYLE = "-fx-background-color: transparent; -fx-background-image: url('"
-			+ ClassLoader.getSystemResource("white_button01.png").toString() + "');";
-	private final String BUTTON_FREE_STYLE = "-fx-background-color: transparent; -fx-background-image: url('"
-			+ ClassLoader.getSystemResource("blue_button00.png").toString() + "');";
+	
 
 	public Buttons(String text) {
 		setText(text);
 		setPrefWidth(BUTTON_WIDTH);
 		setPrefHeight(BUTTON_HEIGHT);
 		setButtonsFont();
-		setStyle(BUTTON_FREE_STYLE);
+		//setStyle(BUTTON_FREE_STYLE);
 		initializedButton();
 		
 	}
@@ -32,13 +29,13 @@ public class Buttons extends Button{
 	}
 
 	private void setButtonPressedStyle() {
-		setStyle(BUTTON_PRESSED_STYLE);
+		//setStyle(BUTTON_PRESSED_STYLE);
 		setPrefHeight(45);
 		setPrefWidth(230);
 	}
 
 	private void setButtonReleasedStyle() {
-		setStyle(BUTTON_FREE_STYLE);
+		//setStyle(BUTTON_FREE_STYLE);
 		setPrefHeight(50);
 		setPrefWidth(250);
 	}
