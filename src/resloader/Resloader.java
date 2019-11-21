@@ -18,11 +18,7 @@ public class Resloader {
 	public static void load() {
 		
 		fox = new ImageView(new Image(ClassLoader.getSystemResource("fox1.png").toString())) ; 
-		try {
-			MAIN_BG = new Image(ClassLoader.getSystemResource("bg.jpg").toURI().toString());
-		} catch (URISyntaxException e) {
-			e.printStackTrace();
-		}
+		MAIN_BG = new Image(ClassLoader.getSystemResource("bg.jpg").toString());
 	}
 	
 }

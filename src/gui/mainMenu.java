@@ -25,30 +25,31 @@ import resloader.Resloader;
 
 public class mainMenu extends AnchorPane {
 	
-	private Buttons playBtn;
-	private Buttons howToBtn;
-	private Buttons exitBtn;
+	private Button playBtn;
+	private Button howToBtn;
+	private Button exitBtn;
 	private Text scenetitle1;
 	private Text scenetitle2;
 	private AnchorPane mainPane;
 	private AnchorPane titlePane;
 	private HBox buttonPane;
 	public static Stage mainStage;
+	public static final int Width = 400 ; 
+	public static final int Height = 600 ; 
 	
 	public mainMenu () {
 		
 		Resloader.load();
 		mainPane = new AnchorPane();
+		this.initializeButton();
+		this.initializeTitle();
+		this.createBg();
+		Scene scene = new Scene(mainPane,Width,Height);
 		mainStage = new Stage();
-		Scene scene = new Scene(mainPane,GameSetting.Game_width,GameSetting.Game_height);
+
 		mainStage.setTitle("Main menu");
 		mainStage.setScene(scene);
-
-		
-		this.createBg();
-		this.initializeTitle();
-		this.initializeButton();
-		this.initializeMain();
+		//this.initializeMain();
 		
 		
 	}
@@ -77,9 +78,9 @@ public class mainMenu extends AnchorPane {
 
 	private void initializeButton() {
 		
-		this.playBtn = new Buttons("PLAY");
-		this.howToBtn = new Buttons("HOW TO PLAY");
-		this.exitBtn = new Buttons("EXIT");
+		this.playBtn = new Button("PLAY");
+		this.howToBtn = new Button("HOW TO PLAY");
+		this.exitBtn = new Button("EXIT");
 		
 		buttonPane = new HBox();
 		buttonPane.setPadding(new Insets(10));
