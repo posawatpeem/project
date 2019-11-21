@@ -16,6 +16,7 @@ public class Buttons extends Button{
 
 	public Buttons(String text) {
 		setText(text);
+		setStyle("-fx-background-color: #FEAD32");
 		setPrefWidth(BUTTON_WIDTH);
 		setPrefHeight(BUTTON_HEIGHT);
 		setButtonsFont();
