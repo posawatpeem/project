@@ -64,12 +64,14 @@ public class Game {
 		
 		 gamePane = new AnchorPane();
 		 player = new Player() ; 
+		 
 		 gamePane.getChildren().add(player.getFoxGroup()) ; 
 		 gameScene =new Scene(gamePane,400,600) ;
 		 
 		 gameStage = new Stage() ; 
 		 gameStage.setTitle("20 Century Fox");
 		 gameStage.setScene(gameScene);
+		 gameStage.setResizable(false);
 	
 	}
 	
