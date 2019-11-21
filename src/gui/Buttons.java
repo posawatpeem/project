@@ -10,7 +10,7 @@ import javafx.scene.text.Font;
 public class Buttons extends Button{
 	
 	private static final int BUTTON_HEIGHT = 50;
-	private static final int BUTTON_WIDTH = 250;
+	private static final int BUTTON_WIDTH = 200;
 
 	
 
@@ -25,20 +25,11 @@ public class Buttons extends Button{
 	}
 
 	private void setButtonsFont() {
-		setFont(Font.loadFont(ClassLoader.getSystemResource("Kenney_Future.ttf").toString(), 26));
+		setFont(Font.loadFont(ClassLoader.getSystemResource("Kenney_Future.ttf").toString(), 15));
+	
 	}
 
-	private void setButtonPressedStyle() {
-		//setStyle(BUTTON_PRESSED_STYLE);
-		setPrefHeight(45);
-		setPrefWidth(230);
-	}
-
-	private void setButtonReleasedStyle() {
-		//setStyle(BUTTON_FREE_STYLE);
-		setPrefHeight(50);
-		setPrefWidth(250);
-	}
+	
 	
 	private void initializedButton() {
 		
@@ -46,7 +37,7 @@ public class Buttons extends Button{
 			@Override
 			public void handle(MouseEvent event) {
 				setPrefHeight(48);
-				setPrefWidth(240);
+				setPrefWidth(190);
 			}
 		});
 
@@ -54,7 +45,7 @@ public class Buttons extends Button{
 			@Override
 			public void handle(MouseEvent event) {
 				setPrefHeight(50);
-				setPrefWidth(250);
+				setPrefWidth(200);
 			}
 		});
 		

@@ -87,10 +87,9 @@ public class mainMenu extends AnchorPane {
 		this.howToBtn = new Buttons("HOW TO PLAY");
 		this.exitBtn = new Buttons("EXIT");
 		
-		buttonPane = new VBox(8);
-		buttonPane.setPadding(new Insets(10));
-		buttonPane.setLayoutX(150);
-		buttonPane.setLayoutY(250);
+		buttonPane = new VBox(15);
+		buttonPane.setLayoutX(100);
+		buttonPane.setLayoutY(300);
 		buttonPane.setAlignment(Pos.CENTER);
 		buttonPane.getChildren().addAll(this.playBtn,this.howToBtn,this.exitBtn);
 		
