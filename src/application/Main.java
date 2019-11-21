@@ -18,10 +18,15 @@ public class Main extends Application {
  @Override
  public void start(Stage primaryStage) throws Exception {
   // TODO Auto-generated method stub
-	 new mainMenu() ;
-	 
-	 primaryStage = mainMenu.mainStage ; 
-	 primaryStage.show();
+	 try {
+		 new mainMenu() ;
+		 primaryStage.setResizable(false);
+		 primaryStage = mainMenu.mainStage ; 
+		 primaryStage.show();
+	 }catch(Exception e) {
+		 e.printStackTrace();
+	 }
+	
 		
   
  }
