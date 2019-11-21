@@ -5,6 +5,7 @@ import java.net.URISyntaxException;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
@@ -32,7 +33,7 @@ public class mainMenu extends AnchorPane {
 	private Text scenetitle2;
 	private AnchorPane mainPane;
 	private AnchorPane titlePane;
-	private HBox buttonPane;
+	private VBox buttonPane;
 	public static Stage mainStage;
 	public static final int Width = 400 ; 
 	public static final int Height = 600 ; 
@@ -49,6 +50,7 @@ public class mainMenu extends AnchorPane {
 
 		mainStage.setTitle("Main menu");
 		mainStage.setScene(scene);
+		mainStage.setResizable(false);
 		this.initializeMain();
 		
 		
@@ -85,13 +87,15 @@ public class mainMenu extends AnchorPane {
 		this.howToBtn = new Button("HOW TO PLAY");
 		this.exitBtn = new Button("EXIT");
 		
-		buttonPane = new HBox();
+		buttonPane = new VBox(8);
 		buttonPane.setPadding(new Insets(10));
-		buttonPane.setLayoutX(200);
+		buttonPane.setLayoutX(150);
 		buttonPane.setLayoutY(250);
+		buttonPane.setAlignment(Pos.CENTER);
 		buttonPane.getChildren().addAll(this.playBtn,this.howToBtn,this.exitBtn);
 		
 		mainPane.getChildren().add(buttonPane);
+		
 		
 	}
 	
@@ -117,6 +121,7 @@ public class mainMenu extends AnchorPane {
 		this.scenetitle2.setLayoutY(60);
 		
 		titlePane.getChildren().addAll(this.scenetitle1,this.scenetitle2);
+		
 		mainPane.getChildren().add(titlePane);
 		
 	}
