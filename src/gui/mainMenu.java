@@ -107,13 +107,13 @@ public class mainMenu extends AnchorPane {
 		titlePane.setPrefHeight(250);
 		titlePane.setPrefWidth(400);
 		
-		this.scenetitle1.setFont(Font.loadFont(ClassLoader.getSystemResource("Kenney_Future.ttf").toString(), 80));
+		this.scenetitle1.setFont(Font.loadFont(ClassLoader.getSystemResource("Kenney_Pixel.ttf").toString(), 150));
 		this.scenetitle1.setFill(Color.WHITE);
 		this.scenetitle1.setStrokeWidth(3);
 		this.scenetitle1.setStroke(Color.LIGHTGRAY);
 		
 		
-		this.scenetitle2.setFont(Font.loadFont(ClassLoader.getSystemResource("Kenney_Future.ttf").toString(), 70));
+		this.scenetitle2.setFont(Font.loadFont(ClassLoader.getSystemResource("Kenney_Pixel.ttf").toString(), 90));
 		this.scenetitle2.setFill(Color.WHITE);
 		this.scenetitle2.setStrokeWidth(3);
 		this.scenetitle2.setStroke(Color.LIGHTGRAY);
