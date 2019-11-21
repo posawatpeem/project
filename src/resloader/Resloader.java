@@ -18,7 +18,7 @@ public class Resloader {
 	public static void load() {
 		
 		fox = new ImageView(new Image(ClassLoader.getSystemResource("fox1.png").toString())) ; 
-		MAIN_BG = new Image(ClassLoader.getSystemResource("realbg.jpg").toString());
+		MAIN_BG = new Image(ClassLoader.getSystemResource("background.jpg").toString());
 	}
 	
 }

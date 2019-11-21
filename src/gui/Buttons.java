@@ -5,6 +5,7 @@ import javafx.scene.control.Button;
 import javafx.scene.effect.DropShadow;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 
 public class Buttons extends Button{
@@ -20,13 +21,13 @@ public class Buttons extends Button{
 		setPrefWidth(BUTTON_WIDTH);
 		setPrefHeight(BUTTON_HEIGHT);
 		setButtonsFont();
-		//setStyle(BUTTON_FREE_STYLE);
 		initializedButton();
+		setTextFill(Color.WHITESMOKE);
 		
 	}
 
 	private void setButtonsFont() {
-		setFont(Font.loadFont(ClassLoader.getSystemResource("Kenney_Future.ttf").toString(), 15));
+		setFont(Font.loadFont(ClassLoader.getSystemResource("Kenney_Future.ttf").toString(), 20));
 	
 	}
 
@@ -38,7 +39,7 @@ public class Buttons extends Button{
 			@Override
 			public void handle(MouseEvent event) {
 				setPrefHeight(48);
-				setPrefWidth(190);
+				setPrefWidth(195);
 			}
 		});
 

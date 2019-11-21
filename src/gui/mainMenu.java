@@ -48,7 +48,7 @@ public class mainMenu extends AnchorPane {
 		Scene scene = new Scene(mainPane,Width,Height);
 		mainStage = new Stage();
 
-		mainStage.setTitle("Main menu");
+		mainStage.setTitle("Foxxy Road");
 		mainStage.setScene(scene);
 		mainStage.setResizable(false);
 		this.initializeMain();
@@ -89,7 +89,7 @@ public class mainMenu extends AnchorPane {
 		
 		buttonPane = new VBox(15);
 		buttonPane.setLayoutX(100);
-		buttonPane.setLayoutY(300);
+		buttonPane.setLayoutY(320);
 		buttonPane.setAlignment(Pos.CENTER);
 		buttonPane.getChildren().addAll(this.playBtn,this.howToBtn,this.exitBtn);
 		
@@ -109,16 +109,16 @@ public class mainMenu extends AnchorPane {
 		titlePane.setPrefWidth(400);
 		
 		this.scenetitle1.setFont(Font.loadFont(ClassLoader.getSystemResource("Kenney_Pixel.ttf").toString(), 130));
-		this.scenetitle1.setFill(Color.web("#ffac2f"));
-		this.scenetitle1.setStrokeWidth(4);
-		this.scenetitle1.setStroke(Color.web("#7f6d58"));
-		this.scenetitle1.setLayoutX(60);
+		this.scenetitle1.setFill(Color.web("#b27e43"));
+		this.scenetitle1.setStrokeWidth(1);
+		this.scenetitle1.setStroke(Color.web("#cacf34"));
+		this.scenetitle1.setLayoutX(70);
 		this.scenetitle1.setLayoutY(200);
 		
 		this.scenetitle2.setFont(Font.loadFont(ClassLoader.getSystemResource("Kenney_Pixel.ttf").toString(), 100));
-		this.scenetitle2.setFill(Color.web("#ffac2f"));
-		this.scenetitle2.setStrokeWidth(4);
-		this.scenetitle2.setStroke(Color.web("#7f6d58"));
+		this.scenetitle2.setFill(Color.web("#b27e43"));
+		this.scenetitle2.setStrokeWidth(1);
+		this.scenetitle2.setStroke(Color.web("#cacf34"));
 		this.scenetitle2.setLayoutX(180);
 		this.scenetitle2.setLayoutY(270);
 		
