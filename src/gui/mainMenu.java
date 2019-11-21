@@ -9,6 +9,8 @@ import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundImage;
@@ -34,6 +36,7 @@ public class mainMenu extends AnchorPane {
 	private AnchorPane mainPane;
 	private VBox titlePane;
 	private VBox buttonPane;
+	private ImageView soundBtn;
 	public static Stage mainStage;
 	public static final int Width = 400 ; 
 	public static final int Height = 600 ; 
@@ -122,10 +125,22 @@ public class mainMenu extends AnchorPane {
 		this.scenetitle2.setLayoutX(180);
 		this.scenetitle2.setLayoutY(270);
 		
-		
-		//titlePane.getChildren().addAll(this.scenetitle1,this.scenetitle2);
-		//titlePane.setAlignment(Pos.CENTER);
 		mainPane.getChildren().addAll(this.scenetitle1,this.scenetitle2);
+		
+	}
+	
+	private void createSoundBtn() {
+		this.soundBtn = Resloader.volumeBtn;
+		this.soundBtn.setOnMousePressed(new EventHandler<MouseEvent>() {
+
+	        public void handle(MouseEvent event) {
+	        	soundBtn.setFitHeight(50);
+	        	soundBtn.setFitWidth(50);
+	        }
+	    });
+		this.soundBtn.setLayoutX(0);
+		this.soundBtn.setLayoutY(300);
+		mainPane.getChildren().add(this.soundBtn);
 		
 	}
 	
