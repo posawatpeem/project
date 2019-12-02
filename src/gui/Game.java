@@ -71,7 +71,7 @@ public class Game {
 		 gameStage = new Stage() ; 
 		 gameStage.setTitle("20 Century Fox");
 		 gameStage.setScene(gameScene);
-		 gameStage.setResizable(false);
+		 gameStage.setResizable(false); 
 	
 	}
 	
@@ -116,4 +116,9 @@ public class Game {
 			}
 		});	
 	}
+
+	public Scene getGameScene() {
+		return gameScene;
+	}
+
 }

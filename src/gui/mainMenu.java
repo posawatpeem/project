@@ -64,9 +64,8 @@ public class mainMenu extends AnchorPane {
 		this.playBtn.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent event) {
-				mainStage.hide();
-				new Game();
-				Game.gameStage.show(); 
+				Game g = new Game(); 
+				mainStage.setScene(g.getGameScene());
 				
 			}
 		});
