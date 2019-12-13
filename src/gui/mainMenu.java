@@ -129,7 +129,7 @@ public class mainMenu extends AnchorPane {
 	}
 	
 	private void createSoundBtn() {
-		this.soundBtn = Resloader.volumeBtn;
+		this.soundBtn = Resloader.unmuteBtn;
 		this.soundBtn.setOnMousePressed(new EventHandler<MouseEvent>() {
 
 	        public void handle(MouseEvent event) {

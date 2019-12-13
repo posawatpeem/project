@@ -21,7 +21,11 @@ public class SoundButton extends Button{
 		this.btnBg.setOnMousePressed(new EventHandler<MouseEvent>() {
 
             public void handle(MouseEvent event) {
-                btnBg.setImage(Resloader.muteBtn);
+            	if (btnBg == new ImageView(Resloader.unmuteBtn))  {
+            		btnBg.setImage(Resloader.muteBtn);
+            	} else {
+            		btnBg.setImage(Resloader.unmuteBtn);
+            	}      
             }
             
         });
