@@ -6,7 +6,7 @@ public abstract class Entity {
 		setSpawnPosition() ; 
 		
 	}
-	
+
 	public abstract void setGc() ; 
 	public abstract void setSpawnPosition() ; 
 	

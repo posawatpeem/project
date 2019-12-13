@@ -1,5 +1,6 @@
 package gui;
 
+import base.car;
 import entity.Player;
 import javafx.animation.AnimationTimer;
 import javafx.event.EventHandler;
@@ -17,6 +18,7 @@ public class Game {
 	
 	public static Player player ; 
 	private AnimationTimer Timer ; 
+	private car car1 ; 
 	
 	private boolean up ;
 	private boolean down ;
@@ -64,8 +66,10 @@ public class Game {
 		
 		 gamePane = new AnchorPane();
 		 player = new Player() ; 
+		 car1 = new car(10) ; 
 		 
 		 gamePane.getChildren().add(player.getFoxGroup()) ; 
+		 gamePane.getChildren().add(car1.getCarGroup()) ; 
 		 gameScene =new Scene(gamePane,400,600) ;
 		 
 		 gameStage = new Stage() ; 
