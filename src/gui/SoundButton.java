@@ -1,14 +1,31 @@
 package gui;
 
+import javafx.event.Event;
+import javafx.event.EventHandler;
 import javafx.scene.control.Button;
+import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.media.AudioClip;
+import resloader.Resloader;
 
 public class SoundButton extends Button{
 	private static boolean SoundOn ; 
 	private AudioClip song ; 
+	private final ImageView btnBg;
 	
 	public SoundButton() {
 		this.SoundOn = true ; 
+		this.btnBg = new ImageView(Resloader.unmuteBtn);
+		this.getChildren().add(this.btnBg);
+		
+		this.btnBg.setOnMousePressed(new EventHandler<MouseEvent>() {
+
+            public void handle(MouseEvent event) {
+                btnBg.setImage(Resloader.muteBtn);
+            }
+            
+        });
+
 		
 	}
 	
