@@ -3,6 +3,7 @@ package gui;
 import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.scene.control.Button;
+import javafx.scene.effect.DropShadow;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.media.AudioClip;
@@ -12,8 +13,8 @@ public class SoundButton extends Button{
 	private static boolean SoundOn ; 
 	private AudioClip song ; 
 	private final ImageView btnBg;
-	private static final int BUTTON_HEIGHT = 30;
-	private static final int BUTTON_WIDTH = 30;
+	private static final int BUTTON_HEIGHT = 50;
+	private static final int BUTTON_WIDTH = 50;
 	
 	public SoundButton() {
 		this.SoundOn = true ; 
@@ -22,19 +23,8 @@ public class SoundButton extends Button{
 		this.setPrefWidth(BUTTON_WIDTH);
 		this.setGraphic(this.btnBg);
 		this.setStyle("-fx-background-color: #FEAD32");
+		this.initializedButton();
 		
-		this.btnBg.setOnMousePressed(new EventHandler<MouseEvent>() {
-
-            public void handle(MouseEvent event) {
-            	//if (btnBg == new ImageView(Resloader.unmuteBtn))  {
-            		btnBg.setImage(Resloader.unmuteBtn);
-            	//} else {
-            		//btnBg.setImage(Resloader.unmuteBtn);
-            	//}      
-            }
-            
-        });
-
 	}
 	
 	public void Mute() {
@@ -60,5 +50,38 @@ public class SoundButton extends Button{
 		if (!IsSoundOn()) {
 			this.song.stop();
 		}
+	}
+	
+	private void initializedButton() {
+		
+		setOnMousePressed(new EventHandler<MouseEvent>() {
+			@Override
+			public void handle(MouseEvent event) {
+				setPrefHeight(30);
+				setPrefWidth(30);
+			}
+		});
+
+		setOnMouseReleased(new EventHandler<MouseEvent>() {
+			@Override
+			public void handle(MouseEvent event) {
+				setPrefHeight(50);
+				setPrefWidth(50);
+			}
+		});
+		
+		setOnMouseEntered(new EventHandler<MouseEvent>() {
+			@Override
+			public void handle(MouseEvent event) {
+				setEffect(new DropShadow());
+			}
+		});
+
+		setOnMouseExited(new EventHandler<MouseEvent>() {
+			@Override
+			public void handle(MouseEvent event) {
+				setEffect(null);
+			}
+		});
 	}
 }
