@@ -20,6 +20,9 @@ public class car extends Entity implements moveAble{
 		super() ; 
 		this.yLayout = y ;
 		this.move() ;
+		if (carGroup.getLayoutX() == 10) {
+			
+		}
 	}
 	public Group getCarGroup() {
 		return carGroup;
@@ -51,7 +54,7 @@ public class car extends Entity implements moveAble{
 				// TODO Auto-generated method stub
 				carGroup.setLayoutX(carGroup.getLayoutX() - velocity1);
 				if (carGroup.getLayoutX() ==10) {
-					timer.stop();
+				
 				}
 			}
 			
