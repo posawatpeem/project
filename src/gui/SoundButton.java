@@ -12,25 +12,29 @@ public class SoundButton extends Button{
 	private static boolean SoundOn ; 
 	private AudioClip song ; 
 	private final ImageView btnBg;
+	private static final int BUTTON_HEIGHT = 30;
+	private static final int BUTTON_WIDTH = 30;
 	
 	public SoundButton() {
 		this.SoundOn = true ; 
-		this.btnBg = new ImageView(Resloader.unmuteBtn);
-		this.getChildren().add(this.btnBg);
+		this.btnBg = new ImageView(Resloader.muteBtn);
+		this.setPrefHeight(BUTTON_HEIGHT);
+		this.setPrefWidth(BUTTON_WIDTH);
+		this.setGraphic(this.btnBg);
+		this.setStyle("-fx-background-color: #FEAD32");
 		
 		this.btnBg.setOnMousePressed(new EventHandler<MouseEvent>() {
 
             public void handle(MouseEvent event) {
-            	if (btnBg == new ImageView(Resloader.unmuteBtn))  {
-            		btnBg.setImage(Resloader.muteBtn);
-            	} else {
+            	//if (btnBg == new ImageView(Resloader.unmuteBtn))  {
             		btnBg.setImage(Resloader.unmuteBtn);
-            	}      
+            	//} else {
+            		//btnBg.setImage(Resloader.unmuteBtn);
+            	//}      
             }
             
         });
 
-		
 	}
 	
 	public void Mute() {

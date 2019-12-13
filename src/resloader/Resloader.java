@@ -21,8 +21,8 @@ public class Resloader {
 		
 		fox = new ImageView(new Image(ClassLoader.getSystemResource("fox1.png").toString())) ; 
 		MAIN_BG = new Image(ClassLoader.getSystemResource("background.jpg").toString());
-		unmuteBtn = (new Image(ClassLoader.getSystemResource("unmute.png").toString())) ; 
-		muteBtn = (new Image(ClassLoader.getSystemResource("mute.png").toString())) ;
+		muteBtn = new Image(ClassLoader.getSystemResource("volume.png").toString(),30,30,true,true) ; 
+		unmuteBtn = new Image(ClassLoader.getSystemResource("unmute.png").toString(),30,30,true,true) ;
 	}
 	
 }
