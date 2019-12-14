@@ -3,22 +3,28 @@ package Map;
 import java.util.ArrayList;
 
 import base.car;
+import base.moveAble;
 import entity.Entity;
 import entity.ObjectInMap;
+import javafx.animation.Animation;
+import javafx.application.Platform;
 import javafx.scene.Group;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import resloader.Resloader;
-public class Road extends ObjectInMap{
+public class Road  extends ObjectInMap implements moveAble{
 	private int numRoads ; 
 	private ArrayList<car> Car ; 
 	private double yAxis ; 
 	private ImageView road ; 
 	private Group groupRoad ;
+	private Thread thread ; 
 	
 	public Road(int yAxis ) {
 		super(yAxis) ;  
+		this.Car = new ArrayList<car>()  ;  
 		this.createCar();
+		this.move();
 		
 	}
 	
@@ -49,22 +55,50 @@ public class Road extends ObjectInMap{
 	}
 	
 	
-	public void createCar() {
-		Car = new ArrayList<car>() ; 
-		for (int i = 0 ; i< 1 ; i++) {
-			int min = 1 ; 
-			int max =6 ; 
-			int carNum = min +(int)(Math.random()*((max-min)+1)) ;
-			for (int j = 0 ; j < carNum ;j++) {
-				car car1 = new car(this.yAxis) ; 
-				Car.add(car1) ;
-			}
-		}
+	public void createCar() { 
+		car car1 = new car(this.yAxis) ; 
+		Car.add(car1) ;
 	}
 
 
 	public ArrayList<car> getCar() {
 		return Car;
+	}
+
+
+
+	@Override
+	public void move() {
+		// TODO Auto-generated method stub
+		this.thread = new Thread(new Runnable() {
+			@Override
+			public void run() {
+				// TODO Auto-generated method stub
+				Platform.runLater(new Runnable() {
+					@Override
+					public void run() {
+						// TODO Auto-generated method stub
+						try {
+							groupRoad.setLayoutY(groupRoad.getLayoutY()+1 );
+							thread.sleep(10);
+						} catch (InterruptedException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						};
+					}
+				});
+	
+			}
+		});
+		thread.start(); 
+	}
+
+
+
+	@Override
+	public void checkCrash() {
+		// TODO Auto-generated method stub
+		
 	}
 
 

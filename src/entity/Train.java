@@ -31,8 +31,8 @@ public class Train extends ObjectInMap implements moveAble{
 	public void setGc() {
 		// TODO Auto-generated method stub
 		this.train = Resloader.train;
-		this.train.setFitHeight(100);
-		this.train.setFitWidth(100);
+		this.train.setFitHeight(150);
+		this.train.setFitWidth(150);
 		this.trainGroup = new Group(train);
 		this.trainGroup.toFront();
 		
@@ -41,8 +41,8 @@ public class Train extends ObjectInMap implements moveAble{
 	@Override
 	public void setSpawnPosition(double yAxis) {
 		// TODO Auto-generated method stub
-		this.yLayout = yAxis ; 
-		trainGroup.setLayoutY(yAxis);
+		this.yLayout = yAxis-25 ; 
+		trainGroup.setLayoutY(this.yLayout);
 		trainGroup.setLayoutX(300);
 		
 	}

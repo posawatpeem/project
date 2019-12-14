@@ -22,6 +22,7 @@ public class Game {
 	
 	public static Player player ; 
 	private AnimationTimer Timer ; 
+	private AnimationTimer Loop ; 
 	private Road road ; 
 	private RailRoad railRoad;
 	
@@ -64,6 +65,7 @@ public class Game {
 			 
 		 };
 		 Timer.start();
+		 createLoop();
 		 
 	}
 	
@@ -72,7 +74,7 @@ public class Game {
 		 gamePane = new AnchorPane();
 		 player = new Player() ; 
 		 road = new Road(100) ; 
-		 railRoad = new RailRoad(200);
+		 railRoad = new RailRoad(175);
 		 gamePane.setStyle("-fx-background-color: #63c900;");
 		 gamePane.getChildren().add(player.getFoxGroup()) ; 
 		 gamePane.getChildren().addAll(road.getGroupRoad()) ;
@@ -90,7 +92,20 @@ public class Game {
 		 gameStage.setTitle("20 Century Fox");
 		 gameStage.setScene(gameScene);
 		 gameStage.setResizable(false); 
+		 
 	
+	}
+	public void createLoop() {
+		Loop = new AnimationTimer() {
+			
+			@Override
+			public void handle(long arg0) {
+				// TODO Auto-generated method stub
+				road.move(); 
+			}
+		};
+		Loop.start(); 
+		
 	}
 	
 	public void  createKeyListener() {
