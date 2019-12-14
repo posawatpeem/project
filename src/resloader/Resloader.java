@@ -24,7 +24,7 @@ public class Resloader {
 		car = new ImageView(new Image(ClassLoader.getSystemResource("car.png").toString())) ; 
 		muteBtn = new Image(ClassLoader.getSystemResource("volume.png").toString(),30,30,true,true) ; 
 		road = new ImageView(new Image(ClassLoader.getSystemResource("road.jpg").toString()));
-		rail2 = new ImageView(new Image(ClassLoader.getSystemResource("rail2.png").toString()));
+		rail2 = new ImageView(new Image(ClassLoader.getSystemResource("rail.png").toString()));
 		train = new ImageView(new Image(ClassLoader.getSystemResource("train.png").toString()));
 	}
 	

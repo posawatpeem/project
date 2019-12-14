@@ -8,7 +8,7 @@ import resloader.Resloader;
 
 public class Train extends ObjectInMap implements moveAble{
 	
-	private static final int velocity1 = 5 ;
+	private static final int velocity1 = 2 ;
 	private static final int velocity2 = 6 ; 
 	private static final int velocity3 = 7 ; 
 	private ImageView train  ; 

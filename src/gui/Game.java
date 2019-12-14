@@ -11,6 +11,7 @@ import javafx.scene.Scene;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import resloader.Resloader;
 
@@ -72,16 +73,16 @@ public class Game {
 		 player = new Player() ; 
 		 road = new Road(100) ; 
 		 railRoad = new RailRoad(200);
-		 
+		 gamePane.setStyle("-fx-background-color: #63c900;");
 		 gamePane.getChildren().add(player.getFoxGroup()) ; 
 		 gamePane.getChildren().addAll(road.getGroupRoad()) ;
 		 gamePane.getChildren().addAll(railRoad.getGroupRail());
 		 for (car x : road.getCar()) {
 			 gamePane.getChildren().add(x.getCarGroup()) ; 
 		 }
-		// for (Train x : railRoad.getTrain()) {
-			// gamePane.getChildren().add(x.getTrainGroup()) ; 
-		 //s}
+		 for (Train x : railRoad.getTrain()) {
+			 gamePane.getChildren().add(x.getTrainGroup()) ; 
+		 }
 		 player.getFoxGroup().toFront();
 		 gameScene =new Scene(gamePane,400,600) ;
 		 

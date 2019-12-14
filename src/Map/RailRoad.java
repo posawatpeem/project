@@ -17,6 +17,7 @@ public class RailRoad extends ObjectInMap{
 	
 	public RailRoad(int yAxis) {
 		super(yAxis);
+		this.createTrain();
 	}
 
 	
