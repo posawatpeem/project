@@ -53,7 +53,7 @@ public class howToPlay  {
 		
 		this.howToText = new Text("How To Play.");
 		
-		this.howToText.setFont(Font.loadFont(ClassLoader.getSystemResource("Kenney_Pixel.ttf").toString(), 130));
+		this.howToText.setFont(Font.loadFont(ClassLoader.getSystemResource("Kenney_Pixel.ttf").toString(), 90));
 		this.howToText.setFill(Color.web("#b27e43"));
 		this.howToText.setStrokeWidth(1);
 		this.howToText.setStroke(Color.web("#cacf34"));
@@ -74,9 +74,10 @@ public class howToPlay  {
 	private void TextBox() {
 		
 		this.textBox = new VBox();
-		this.textBox.setPrefHeight(400);
-		this.textBox.setPrefWidth(250);
-		this.textBox.setAlignment(Pos.CENTER);
+		this.textBox.setPrefHeight(500);
+		this.textBox.setPrefWidth(100);
+		this.textBox.setLayoutX(30);
+		this.textBox.setLayoutY(50);
 		this.initializedButton();
 		this.initializeInfo();
 		
@@ -102,7 +103,7 @@ public class howToPlay  {
 		this.exitButt.setPrefWidth(30);
 		this.exitButt.setGraphic(this.btnBg);
 		this.exitButt.setStyle("-fx-background-color: #FEAD32");
-		this.exitButt.setAlignment(Pos.TOP_RIGHT);
+		this.exitButt.setAlignment(Pos.TOP_LEFT);
 		
 		this.exitButt.setOnMousePressed(new EventHandler<MouseEvent>() {
 			@Override
