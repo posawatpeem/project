@@ -26,7 +26,7 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import resloader.Resloader;
 
-public class mainMenu extends AnchorPane {
+public class mainMenu  {
 	
 	private Buttons playBtn;
 	private Buttons howToBtn;
