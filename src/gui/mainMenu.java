@@ -106,11 +106,7 @@ public class mainMenu extends AnchorPane {
 		this.scenetitle1 = new Text("Foxxy");
 		this.scenetitle2 = new Text("Road.");
 		
-	
-		titlePane = new VBox();
-		titlePane.setPrefHeight(250);
-		titlePane.setPrefWidth(400);
-		
+
 		this.scenetitle1.setFont(Font.loadFont(ClassLoader.getSystemResource("Kenney_Pixel.ttf").toString(), 130));
 		this.scenetitle1.setFill(Color.web("#b27e43"));
 		this.scenetitle1.setStrokeWidth(1);
