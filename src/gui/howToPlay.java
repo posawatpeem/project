@@ -30,6 +30,7 @@ public class howToPlay  {
 	private VBox textBox;
 	private Button exitButt;
 	private ImageView btnBg;
+	private Scene gameScene ;
 	 
 	public howToPlay() {
 		
@@ -38,11 +39,11 @@ public class howToPlay  {
 		this.TextBox();
 		this.createBg();
 		//this.initializeInfo();
-		Scene scene = new Scene(mainPane,Width,Height);
+		gameScene = new Scene(mainPane,Width,Height);
 		mainStage = new Stage();
 
 		mainStage.setTitle("Foxxy Road");
-		mainStage.setScene(scene);
+		mainStage.setScene(gameScene);
 		mainStage.setResizable(false);
 		
 	}
@@ -116,6 +117,7 @@ public class howToPlay  {
 			public void handle(MouseEvent event) {
 				exitButt.setPrefWidth(30);
 				exitButt.setPrefHeight(30);
+				System.exit(0);
 			}
 		});
 		
@@ -135,4 +137,11 @@ public class howToPlay  {
 		
 		this.textBox.getChildren().add(this.exitButt);
 	}
+
+	public Scene getGameScene() {
+		return gameScene;
+	}
+
+	
+	
 }

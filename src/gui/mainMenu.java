@@ -73,7 +73,8 @@ public class mainMenu  {
 		this.howToBtn.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent event) {
-				
+				howToPlay hT = new howToPlay();
+				mainStage.setScene(hT.getGameScene());
 			}
 		});
 		this.exitBtn.setOnAction(new EventHandler<ActionEvent>() {
