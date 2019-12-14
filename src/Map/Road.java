@@ -4,11 +4,12 @@ import java.util.ArrayList;
 
 import base.car;
 import entity.Entity;
+import entity.ObjectInMap;
 import javafx.scene.Group;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import resloader.Resloader;
-public class Road extends Entity{
+public class Road extends ObjectInMap{
 	private int numRoads ; 
 	private ArrayList<car> Car ; 
 	private double yAxis ; 
@@ -16,16 +17,14 @@ public class Road extends Entity{
 	private Group groupRoad ;
 	
 	public Road(int yAxis ) {
-		super() ; 
-		this.yAxis = yAxis ; 
+		super(yAxis) ;  
 		this.createCar();
-		
 		
 	}
 	
+	
 
 	public Group getGroupRoad() {
-		this.groupRoad.toBack();
 		return groupRoad;
 		
 	}
@@ -40,12 +39,15 @@ public class Road extends Entity{
 		this.groupRoad = new Group(road) ; 
 	}
 
+
 	@Override
-	public void setSpawnPosition() {
+	public void setSpawnPosition(double yAxis) {
 		// TODO Auto-generated method stub
-		this.road.setLayoutX(0);
-		this.road.setLayoutY(this.yAxis);
+		this.groupRoad.setLayoutX(0);
+		this.groupRoad.setLayoutY(yAxis);
+		this.yAxis = yAxis ; 
 	}
+	
 	
 	public void createCar() {
 		Car = new ArrayList<car>() ; 
@@ -64,5 +66,8 @@ public class Road extends Entity{
 	public ArrayList<car> getCar() {
 		return Car;
 	}
+
+
+
 	
 }

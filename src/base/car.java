@@ -1,12 +1,13 @@
 package base;
 
 import entity.Entity;
+import entity.ObjectInMap;
 import javafx.animation.AnimationTimer;
 import javafx.application.Platform;
 import javafx.scene.Group;
 import javafx.scene.image.ImageView;
 import resloader.Resloader;
-public class car extends Entity implements moveAble{
+public class car extends ObjectInMap implements moveAble{
 
 	private static final int velocity1 = 5 ;
 	private static final int velocity2 = 6 ; 
@@ -17,8 +18,7 @@ public class car extends Entity implements moveAble{
 	private AnimationTimer timer ; 
 	
 	public car(double y) {
-		super() ; 
-		this.yLayout = y ;
+		super(y) ; 
 		this.move() ;
 		
 	}
@@ -38,12 +38,14 @@ public class car extends Entity implements moveAble{
 	}
 
 	@Override
-	public void setSpawnPosition() {
+	public void setSpawnPosition(double yAxis) {
 		// TODO Auto-generated method stub
-		carGroup.setLayoutY(yLayout);
+		this.yLayout = yAxis ; 
+		carGroup.setLayoutY(yAxis);
 		carGroup.setLayoutX(300);
 	}
 
+	
 	@Override
 	public void move() {
 		// TODO Auto-generated method stub
@@ -66,6 +68,6 @@ public class car extends Entity implements moveAble{
 		// TODO Auto-generated method stub
 		
 	}
-
+	
 	
 }
