@@ -38,6 +38,7 @@ public class mainMenu  {
 	private VBox buttonPane;
 	private SoundButton soundBtn;
 	public static Stage mainStage;
+	private Scene gameScene ;
 	public static final int Width = 400 ; 
 	public static final int Height = 600 ; 
 	
@@ -49,11 +50,11 @@ public class mainMenu  {
 		this.initializeTitle();
 		this.initializeSoundButton();
 		this.createBg();
-		Scene scene = new Scene(mainPane,Width,Height);
+		gameScene = new Scene(mainPane,Width,Height);
 		mainStage = new Stage();
 
 		mainStage.setTitle("Foxxy Road");
-		mainStage.setScene(scene);
+		mainStage.setScene(gameScene);
 		mainStage.setResizable(false);
 		this.initializeMain();
 		
@@ -150,4 +151,7 @@ public class mainMenu  {
        mainPane.setBackground(new Background(wallpaper));
 	}
 
+	public Scene getGameScene() {
+		return gameScene;
+	}
 }

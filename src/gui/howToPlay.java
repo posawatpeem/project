@@ -1,5 +1,6 @@
 package gui;
 
+import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -118,18 +119,20 @@ public class howToPlay  {
 		this.subTextBox.getChildren().add(this.exitButt);
 		this.subTextBox.setAlignment(Pos.TOP_RIGHT);
 		
-		this.exitButt.setOnMousePressed(new EventHandler<MouseEvent>() {
+		
+		this.exitButt.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
-			public void handle(MouseEvent event) {
-				exitButt.setPrefWidth(30);
-				exitButt.setPrefHeight(30);
+			public void handle(ActionEvent event) {
+				mainMenu mM = new mainMenu();
+				mainStage.setScene(mM.getGameScene());
 			}
 		});
-
+		
 		this.exitButt.setOnMouseReleased(new EventHandler<MouseEvent>() {
 			@Override
 			public void handle(MouseEvent event) {
-				System.exit(0);
+				mainMenu mM = new mainMenu();
+				mainStage.setScene(mM.getGameScene());
 			}
 		});
 		
