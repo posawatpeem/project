@@ -13,10 +13,17 @@ import javafx.scene.layout.BackgroundImage;
 import javafx.scene.layout.BackgroundPosition;
 import javafx.scene.layout.BackgroundRepeat;
 import javafx.scene.layout.BackgroundSize;
+import javafx.scene.layout.Border;
+import javafx.scene.layout.BorderStroke;
+import javafx.scene.layout.BorderStrokeStyle;
+import javafx.scene.layout.BorderWidths;
+import javafx.scene.layout.CornerRadii;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
+import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
 import resloader.Resloader;
 
@@ -31,6 +38,7 @@ public class howToPlay  {
 	private Button exitButt;
 	private ImageView btnBg;
 	private Scene gameScene ;
+	private HBox subTextBox;
 	 
 	public howToPlay() {
 		
@@ -53,12 +61,16 @@ public class howToPlay  {
 		
 		this.howToText = new Text("How To Play.");
 		
-		this.howToText.setFont(Font.loadFont(ClassLoader.getSystemResource("Kenney_Pixel.ttf").toString(), 90));
-		this.howToText.setFill(Color.web("#b27e43"));
+		this.subTextBox = new HBox();
+		this.subTextBox.getChildren().add(this.howToText);
+		this.subTextBox.setAlignment(Pos.CENTER);
+		
+		this.howToText.setFont(Font.loadFont(ClassLoader.getSystemResource("Kenney_Pixel.ttf").toString(), 70));
+		this.howToText.setFill(Color.web("#ECFF29"));
 		this.howToText.setStrokeWidth(1);
 		this.howToText.setStroke(Color.web("#cacf34"));
 		
-		this.textBox.getChildren().addAll(this.howToText);
+		this.textBox.getChildren().addAll(this.subTextBox);
 	}
 	
 	private void createBg() {
@@ -75,19 +87,16 @@ public class howToPlay  {
 		
 		this.textBox = new VBox();
 		this.textBox.setPrefHeight(500);
-		this.textBox.setPrefWidth(100);
+		this.textBox.setPrefWidth(340);
 		this.textBox.setLayoutX(30);
 		this.textBox.setLayoutY(50);
 		this.initializedButton();
 		this.initializeInfo();
 		
 
-		BackgroundImage wallpaper = new BackgroundImage(Resloader.howTo_BG,
-                BackgroundRepeat.NO_REPEAT,
-                BackgroundRepeat.NO_REPEAT,
-                BackgroundPosition.CENTER,
-                new BackgroundSize(1.0, 1.0, true, true, false, false));;
-        this.textBox.setBackground(new Background(wallpaper));
+		this.textBox.setStyle("-fx-background-color: #CAAC73");
+		this.textBox.setBorder(new Border(new BorderStroke(Color.web("#B47B51"), 
+	            BorderStrokeStyle.SOLID, CornerRadii.EMPTY, new BorderWidths(5))));
 		
 		mainPane.getChildren().add(this.textBox);
 		
@@ -99,25 +108,27 @@ public class howToPlay  {
 		
 		this.exitButt = new Button();
 		this.btnBg = new ImageView(Resloader.exitButt);
-		this.exitButt.setPrefHeight(30);
-		this.exitButt.setPrefWidth(30);
+		this.exitButt.setPrefHeight(50);
+		this.exitButt.setPrefWidth(50);
 		this.exitButt.setGraphic(this.btnBg);
-		this.exitButt.setStyle("-fx-background-color: #FEAD32");
+		this.exitButt.setStyle("-fx-background-color: #CAAC73");
 		this.exitButt.setAlignment(Pos.TOP_LEFT);
+		
+		this.subTextBox = new HBox();
+		this.subTextBox.getChildren().add(this.exitButt);
+		this.subTextBox.setAlignment(Pos.TOP_RIGHT);
 		
 		this.exitButt.setOnMousePressed(new EventHandler<MouseEvent>() {
 			@Override
 			public void handle(MouseEvent event) {
-				exitButt.setPrefWidth(20);
-				exitButt.setPrefHeight(20);
+				exitButt.setPrefWidth(30);
+				exitButt.setPrefHeight(30);
 			}
 		});
 
 		this.exitButt.setOnMouseReleased(new EventHandler<MouseEvent>() {
 			@Override
 			public void handle(MouseEvent event) {
-				exitButt.setPrefWidth(30);
-				exitButt.setPrefHeight(30);
 				System.exit(0);
 			}
 		});
@@ -136,7 +147,7 @@ public class howToPlay  {
 			}
 		});
 		
-		this.textBox.getChildren().add(this.exitButt);
+		this.textBox.getChildren().add(this.subTextBox);
 	}
 
 	public Scene getGameScene() {
