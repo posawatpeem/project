@@ -20,20 +20,20 @@ public class car extends Entity implements moveAble{
 		super() ; 
 		this.yLayout = y ;
 		this.move() ;
-		if (carGroup.getLayoutX() == 10) {
-			
-		}
+		
 	}
 	public Group getCarGroup() {
+		this.carGroup.toFront();
 		return carGroup;
 	}
 	@Override
 	public void setGc() {
 		// TODO Auto-generated method stub
 		this.car1 = Resloader.car ; 
-		this.car1.setFitHeight(50);
-		this.car1.setFitWidth(50);
-		this.carGroup = new Group(car1) ; 
+		this.car1.setFitHeight(100);
+		this.car1.setFitWidth(100);
+		this.carGroup = new Group(car1) ;
+		this.carGroup.toFront();
 		
 	}
 
@@ -48,13 +48,12 @@ public class car extends Entity implements moveAble{
 	public void move() {
 		// TODO Auto-generated method stub
 		timer = new AnimationTimer() {
-
 			@Override
 			public void handle(long arg0) {
 				// TODO Auto-generated method stub
 				carGroup.setLayoutX(carGroup.getLayoutX() - velocity1);
-				if (carGroup.getLayoutX() ==10) {
-				
+				if (carGroup.getLayoutX() ==-50) {
+					timer.stop();
 				}
 			}
 			

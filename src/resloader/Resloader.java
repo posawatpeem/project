@@ -24,6 +24,7 @@ public class Resloader {
 		car = new ImageView(new Image(ClassLoader.getSystemResource("car.png").toString())) ; 
 		muteBtn = new Image(ClassLoader.getSystemResource("volume.png").toString(),30,30,true,true) ; 
 		unmuteBtn = new Image(ClassLoader.getSystemResource("unmute.png").toString(),30,30,true,true) ;
+		road = new ImageView(new Image(ClassLoader.getSystemResource("road.jpg").toString()));
 	}
 	
 }

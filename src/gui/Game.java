@@ -1,5 +1,6 @@
 package gui;
 
+import Map.Road;
 import base.car;
 import entity.Player;
 import javafx.animation.AnimationTimer;
@@ -18,7 +19,7 @@ public class Game {
 	
 	public static Player player ; 
 	private AnimationTimer Timer ; 
-	private car car1 ; 
+	private Road road ; 
 	
 	private boolean up ;
 	private boolean down ;
@@ -66,10 +67,14 @@ public class Game {
 		
 		 gamePane = new AnchorPane();
 		 player = new Player() ; 
-		 car1 = new car(10) ; 
+		 road = new Road(100) ; 
 		 
 		 gamePane.getChildren().add(player.getFoxGroup()) ; 
-		 gamePane.getChildren().add(car1.getCarGroup()) ; 
+		 gamePane.getChildren().addAll(road.getGroupRoad()) ;
+		 for (car x : road.getCar()) {
+			 gamePane.getChildren().add(x.getCarGroup()) ; 
+		 }
+		 player.getFoxGroup().toFront();
 		 gameScene =new Scene(gamePane,400,600) ;
 		 
 		 gameStage = new Stage() ; 
