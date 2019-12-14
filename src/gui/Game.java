@@ -1,8 +1,10 @@
 package gui;
 
+import Map.RailRoad;
 import Map.Road;
 import base.car;
 import entity.Player;
+import entity.Train;
 import javafx.animation.AnimationTimer;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
@@ -20,6 +22,7 @@ public class Game {
 	public static Player player ; 
 	private AnimationTimer Timer ; 
 	private Road road ; 
+	private RailRoad railRoad;
 	
 	private boolean up ;
 	private boolean down ;
@@ -68,12 +71,17 @@ public class Game {
 		 gamePane = new AnchorPane();
 		 player = new Player() ; 
 		 road = new Road(100) ; 
+		 railRoad = new RailRoad(200);
 		 
 		 gamePane.getChildren().add(player.getFoxGroup()) ; 
 		 gamePane.getChildren().addAll(road.getGroupRoad()) ;
+		 gamePane.getChildren().addAll(railRoad.getGroupRail());
 		 for (car x : road.getCar()) {
 			 gamePane.getChildren().add(x.getCarGroup()) ; 
 		 }
+		// for (Train x : railRoad.getTrain()) {
+			// gamePane.getChildren().add(x.getTrainGroup()) ; 
+		 //s}
 		 player.getFoxGroup().toFront();
 		 gameScene =new Scene(gamePane,400,600) ;
 		 
