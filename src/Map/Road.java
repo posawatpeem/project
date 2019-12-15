@@ -18,6 +18,12 @@ public class Road  extends ObjectInMap implements moveAble{
 	private double yAxis ; 
 	private ImageView road ; 
 	private Group groupRoad ;
+	public double getyAxis() {
+		return yAxis;
+	}
+
+
+
 	private Thread thread ; 
 	
 	public Road(int yAxis ) {
@@ -80,6 +86,9 @@ public class Road  extends ObjectInMap implements moveAble{
 						// TODO Auto-generated method stub
 						try {
 							groupRoad.setLayoutY(groupRoad.getLayoutY()+1 );
+							for(car x : Car ) {
+								x.getCarGroup().setLayoutY(x.getCarGroup().getLayoutY()+1);
+							}
 							thread.sleep(10);
 						} catch (InterruptedException e) {
 							// TODO Auto-generated catch block
