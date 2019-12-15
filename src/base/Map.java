@@ -5,6 +5,7 @@ import java.util.Random;
 import entity.ObjectInMap;
 import javafx.scene.Group;
 import javafx.scene.layout.VBox;
+import Map.RailRoad;
 import Map.Road;  
 
 public  class Map extends VBox {
@@ -22,6 +23,7 @@ public  class Map extends VBox {
 		Road road5 = new Road(100) ; 
 		Road road6 = new Road(0) ; 
 		Road road7 = new Road(-100) ; 
+		RailRoad rail = new RailRoad(200);
 		map.add(road1) ; 
 		map.add(road2) ; 
 		map.add(road3) ; 
@@ -31,6 +33,7 @@ public  class Map extends VBox {
 		map.add(road7) ; 
 		this.getChildren().add(road1.getRoads()[0]) ; 
 		this.getChildren().add(road2.getRoads()[0]) ; 
+		this.getChildren().add(rail.getRails()[0]) ; 
 		
 	}
 	
