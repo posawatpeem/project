@@ -131,7 +131,8 @@ public class howToPlay  {
 			public void handle(MouseEvent event) {
 				exitButt.setPrefWidth(30);
 				exitButt.setPrefHeight(30);
-				System.exit(0);
+				mainMenu mM = new mainMenu();
+				mainStage.setScene(mM.getGameScene());
 			}
 		});
 		
