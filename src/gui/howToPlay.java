@@ -32,6 +32,10 @@ public class howToPlay  {
 	public static final int Width = 400 ; 
 	public static final int Height = 600 ; 
 	private Text howToText;
+	private Text firstRules;
+	private Text secondRules;
+	private Text thirdRules;
+	private Text fourthRules;
 	private AnchorPane mainPane;
 	private VBox textBox;
 	private Button exitButt;
@@ -46,7 +50,6 @@ public class howToPlay  {
 		exit = false ; 
 		this.TextBox();
 		this.createBg();
-		//this.initializeInfo();
 		gameScene = new Scene(mainPane,Width,Height);
 		Stage mainStage = new Stage();
 
@@ -63,7 +66,11 @@ public class howToPlay  {
 	public void initializeInfo() {
 	
 		
-		this.howToText = new Text("How To Play.");
+		this.howToText = new Text("How To Play.\n");
+		this.firstRules = new Text("\t1. Press ArrowUp \n \t to go forward.");
+		this.secondRules = new Text("\t2. Press ArrowLeft \n \t to go left.");
+		this.thirdRules = new Text("\t3. Press ArrowRight \n \t to go right.");
+		this.fourthRules = new Text("\t4. Press ArrowDown \n \t to go backward.");
 		
 		this.subTextBox = new HBox();
 		this.subTextBox.getChildren().add(this.howToText);
@@ -74,7 +81,18 @@ public class howToPlay  {
 		this.howToText.setStrokeWidth(1);
 		this.howToText.setStroke(Color.web("#cacf34"));
 		
-		this.textBox.getChildren().addAll(this.subTextBox);
+		this.firstRules.setFont(Font.loadFont(ClassLoader.getSystemResource("Kenney_Pixel.ttf").toString(), 40));
+		this.secondRules.setFont(Font.loadFont(ClassLoader.getSystemResource("Kenney_Pixel.ttf").toString(), 40));
+		this.thirdRules.setFont(Font.loadFont(ClassLoader.getSystemResource("Kenney_Pixel.ttf").toString(), 40));
+		this.fourthRules.setFont(Font.loadFont(ClassLoader.getSystemResource("Kenney_Pixel.ttf").toString(), 40));
+		
+		this.firstRules.setFill(Color.WHITESMOKE);
+		this.secondRules.setFill(Color.WHITESMOKE);
+		this.thirdRules.setFill(Color.WHITESMOKE);
+		this.fourthRules.setFill(Color.WHITESMOKE);
+		this.firstRules.setTextAlignment(TextAlignment.CENTER);
+		
+		this.textBox.getChildren().addAll(this.subTextBox,this.firstRules,this.secondRules,this.thirdRules,this.fourthRules);
 	}
 	
 	private void createBg() {
