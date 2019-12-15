@@ -129,8 +129,7 @@ public class howToPlay  {
 		this.exitButt.setOnMouseReleased(new EventHandler<MouseEvent>() {
 			@Override
 			public void handle(MouseEvent event) {
-				exitButt.setPrefWidth(30);
-				exitButt.setPrefHeight(30);
+				
 				mainMenu mM = new mainMenu();
 				mainStage.setScene(mM.getGameScene());
 			}
