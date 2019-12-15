@@ -1,8 +1,12 @@
 package gui;
 
+import java.util.ArrayList;
+
 import Map.RailRoad;
 import Map.Road;
+import base.Map;
 import base.car;
+import entity.ObjectInMap;
 import entity.Player;
 import entity.Train;
 import javafx.animation.AnimationTimer;
@@ -23,20 +27,30 @@ public class Game {
 	public static Player player ; 
 	private AnimationTimer Timer ; 
 	private AnimationTimer Loop ; 
-	private Road road ; 
+	
 	private RailRoad railRoad;
+	private int size ; 
+	private Map map ; 
 	
 	private boolean up ;
 	private boolean down ;
 	private boolean left ; 
 	private boolean right ;
 	
+	private Road road1 ; 
+	private Road road2 ; 
 	public Game() {
 		 Resloader.load();
 		 setSceneGame();
+		 newGame();
 		 up = down = right = left = false ; 
 		 createKeyListener();
-		 Timer = new AnimationTimer() {
+		 playerMove();
+		 //createLoop();
+		 
+	}
+	public void playerMove() {
+		Timer = new AnimationTimer() {
 			@Override
 			public void handle(long arg0) {
 				// TODO Auto-generated method stub
@@ -65,43 +79,40 @@ public class Game {
 			 
 		 };
 		 Timer.start();
-		 createLoop();
-		 
 	}
 	
-	public void setSceneGame() {
+	public void newGame() {
+		player = new Player() ; 
+		map = new Map(); 
+		gamePane.getChildren().add(map) ; 
 		
+		/*for (ObjectInMap x : map) {
+			if (x instanceof Road) {
+				for (car y : ((Road) x).getCar()) {
+					gamePane.getChildren().add(y.getCarGroup()) ; 
+				}
+			}
+		}*/
+		gamePane.getChildren().add(player.getFoxGroup()) ; 
+		player.getFoxGroup().toFront();
+	}
+	public void setSceneGame() {
 		 gamePane = new AnchorPane();
-		 player = new Player() ; 
-		 road = new Road(100) ; 
-		 railRoad = new RailRoad(175);
 		 gamePane.setStyle("-fx-background-color: #63c900;");
-		 gamePane.getChildren().add(player.getFoxGroup()) ; 
-		 gamePane.getChildren().addAll(road.getGroupRoad()) ;
-		 gamePane.getChildren().addAll(railRoad.getGroupRail());
-		 for (car x : road.getCar()) {
-			 gamePane.getChildren().add(x.getCarGroup()) ; 
-		 }
-		 for (Train x : railRoad.getTrain()) {
-			 gamePane.getChildren().add(x.getTrainGroup()) ; 
-		 }
-		 player.getFoxGroup().toFront();
-		 gameScene =new Scene(gamePane,400,600) ;
 		 
+		 gameScene =new Scene(gamePane,400,600) ;
 		 gameStage = new Stage() ; 
 		 gameStage.setTitle("20 Century Fox");
 		 gameStage.setScene(gameScene);
 		 gameStage.setResizable(false); 
 		 
-	
 	}
 	public void createLoop() {
 		Loop = new AnimationTimer() {
-			
 			@Override
 			public void handle(long arg0) {
 				// TODO Auto-generated method stub
-				road.move(); 
+				
 			}
 		};
 		Loop.start(); 
