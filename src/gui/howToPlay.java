@@ -33,22 +33,22 @@ public class howToPlay  {
 	public static final int Height = 600 ; 
 	private Text howToText;
 	private AnchorPane mainPane;
-	public static Stage mainStage;
 	private VBox textBox;
 	private Button exitButt;
 	private ImageView btnBg;
 	private Scene gameScene ;
 	private HBox subTextBox;
+	private boolean exit ; 
 	 
 	public howToPlay() {
 		
 		mainPane = new AnchorPane();
-		
+		exit = false ; 
 		this.TextBox();
 		this.createBg();
 		//this.initializeInfo();
 		gameScene = new Scene(mainPane,Width,Height);
-		mainStage = new Stage();
+		Stage mainStage = new Stage();
 
 		mainStage.setTitle("Foxxy Road");
 		mainStage.setScene(gameScene);
@@ -56,6 +56,10 @@ public class howToPlay  {
 		
 	}
 	
+	public boolean isExit() {
+		return exit;
+	}
+
 	public void initializeInfo() {
 	
 		
@@ -129,9 +133,9 @@ public class howToPlay  {
 		this.exitButt.setOnMouseReleased(new EventHandler<MouseEvent>() {
 			@Override
 			public void handle(MouseEvent event) {
-			
-				mainMenu mM = new mainMenu();
-				mainStage.setScene(mM.getGameScene());
+				exit = true ; 
+				gui.mainMenu.mainStage.setScene(gui.mainMenu.gameScene);
+				
 			}
 		});
 		

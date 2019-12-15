@@ -38,29 +38,36 @@ public class mainMenu  {
 	private VBox buttonPane;
 	private SoundButton soundBtn;
 	public static Stage mainStage;
-	private Scene gameScene ;
+	public static Scene gameScene ;
 	public static final int Width = 400 ; 
 	public static final int Height = 600 ; 
-	
+	private boolean newMenu ; 
+	private howToPlay hT ; 
 	public mainMenu () {
 		
 		Resloader.load();
+		this.createMenu();
+		this.initializeMain();
+		hT = new howToPlay();
+		mainStage = new Stage();
+		mainStage.setTitle("Foxxy Road");
+		mainStage.setScene(gameScene);
+		mainStage.setResizable(false);
+		
+		
+	}
+	
+
+	public void createMenu() {
 		mainPane = new AnchorPane();
 		this.initializeButton();
 		this.initializeTitle();
 		this.initializeSoundButton();
 		this.createBg();
 		gameScene = new Scene(mainPane,Width,Height);
-		mainStage = new Stage();
-
-		mainStage.setTitle("Foxxy Road");
-		mainStage.setScene(gameScene);
-		mainStage.setResizable(false);
-		this.initializeMain();
 		
 		
 	}
-	
 	private void initializeMain() {
 		
 		this.playBtn.setOnAction(new EventHandler<ActionEvent>() {
@@ -74,8 +81,8 @@ public class mainMenu  {
 		this.howToBtn.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent event) {
-				howToPlay hT = new howToPlay();
 				mainStage.setScene(hT.getGameScene());
+				
 			}
 		});
 		this.exitBtn.setOnAction(new EventHandler<ActionEvent>() {
@@ -154,4 +161,6 @@ public class mainMenu  {
 	public Scene getGameScene() {
 		return gameScene;
 	}
+	
+	
 }
