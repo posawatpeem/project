@@ -129,7 +129,6 @@ public class howToPlay  {
 		this.exitButt.setOnMouseReleased(new EventHandler<MouseEvent>() {
 			@Override
 			public void handle(MouseEvent event) {
-				
 				mainMenu mM = new mainMenu();
 				mainStage.setScene(mM.getGameScene());
 			}
