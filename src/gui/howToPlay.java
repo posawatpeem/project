@@ -81,16 +81,10 @@ public class howToPlay  {
 		this.howToText.setStrokeWidth(1);
 		this.howToText.setStroke(Color.web("#cacf34"));
 		
-		this.firstRules.setFont(Font.loadFont(ClassLoader.getSystemResource("Kenney_Pixel.ttf").toString(), 40));
-		this.secondRules.setFont(Font.loadFont(ClassLoader.getSystemResource("Kenney_Pixel.ttf").toString(), 40));
-		this.thirdRules.setFont(Font.loadFont(ClassLoader.getSystemResource("Kenney_Pixel.ttf").toString(), 40));
-		this.fourthRules.setFont(Font.loadFont(ClassLoader.getSystemResource("Kenney_Pixel.ttf").toString(), 40));
-		
-		this.firstRules.setFill(Color.WHITESMOKE);
-		this.secondRules.setFill(Color.WHITESMOKE);
-		this.thirdRules.setFill(Color.WHITESMOKE);
-		this.fourthRules.setFill(Color.WHITESMOKE);
-		this.firstRules.setTextAlignment(TextAlignment.CENTER);
+		this.setCustomFont(firstRules);
+		this.setCustomFont(secondRules);
+		this.setCustomFont(thirdRules);
+		this.setCustomFont(fourthRules);
 		
 		this.textBox.getChildren().addAll(this.subTextBox,this.firstRules,this.secondRules,this.thirdRules,this.fourthRules);
 	}
@@ -176,6 +170,11 @@ public class howToPlay  {
 
 	public Scene getGameScene() {
 		return gameScene;
+	}
+	
+	public void setCustomFont(Text x) {
+		x.setFill(Color.WHITESMOKE);
+		x.setFont(Font.loadFont(ClassLoader.getSystemResource("Kenney_Pixel.ttf").toString(), 40));
 	}
 
 	
