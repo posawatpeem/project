@@ -57,18 +57,17 @@ public class SoundButton extends Button{
 		setOnMousePressed(new EventHandler<MouseEvent>() {
 			@Override
 			public void handle(MouseEvent event) {
-				setPrefHeight(30);
-				setPrefWidth(30);
+				if (getPrefWidth()==50) {
+					setPrefHeight(30);
+					setPrefWidth(30);
+				} else {
+					setPrefHeight(50);
+					setPrefWidth(50);
+				}
+				
 			}
 		});
 
-		setOnMouseReleased(new EventHandler<MouseEvent>() {
-			@Override
-			public void handle(MouseEvent event) {
-				setPrefHeight(50);
-				setPrefWidth(50);
-			}
-		});
 		
 		setOnMouseEntered(new EventHandler<MouseEvent>() {
 			@Override
