@@ -11,20 +11,15 @@ import javafx.application.Platform;
 import javafx.scene.Group;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.paint.ImagePattern;
+import javafx.scene.shape.Rectangle;
 import resloader.Resloader;
 public class Road  extends ObjectInMap implements moveAble{
 	private int numRoads ; 
 	private ArrayList<car> Car ; 
 	private double yAxis ; 
-	private ImageView road ; 
-	private Group groupRoad ;
-	public double getyAxis() {
-		return yAxis;
-	}
-
-
-
 	private Thread thread ; 
+	private Rectangle[] roads ; 
 	
 	public Road(int yAxis ) {
 		super(yAxis) ;  
@@ -34,29 +29,21 @@ public class Road  extends ObjectInMap implements moveAble{
 		
 	}
 	
-	
-
-	public Group getGroupRoad() {
-		return groupRoad;
-		
-	}
-
-
 	@Override
 	public void setGc() {
 		// TODO Auto-generated method stub
-		this.road = Resloader.road ;
-		this.road.setFitHeight(100);
-		this.road.setFitWidth(400);
-		this.groupRoad = new Group(road) ; 
+		roads = new Rectangle[1] ; 
+		roads[0] = new Rectangle(400, 100) ; 
+		roads[0].setFill(new ImagePattern(Resloader.road));
+		
 	}
 
 
 	@Override
 	public void setSpawnPosition(double yAxis) {
 		// TODO Auto-generated method stub
-		this.groupRoad.setLayoutX(0);
-		this.groupRoad.setLayoutY(yAxis);
+		roads[0].setLayoutX(0);
+		roads[0].setLayoutY(yAxis);
 		this.yAxis = yAxis ; 
 	}
 	
@@ -76,7 +63,7 @@ public class Road  extends ObjectInMap implements moveAble{
 	@Override
 	public void move() {
 		// TODO Auto-generated method stub
-		this.thread = new Thread(new Runnable() {
+		/*this.thread = new Thread(new Runnable() {
 			@Override
 			public void run() {
 				// TODO Auto-generated method stub
@@ -99,10 +86,17 @@ public class Road  extends ObjectInMap implements moveAble{
 	
 			}
 		});
-		thread.start(); 
+		thread.start(); */
 	}
 
+	
+	public Rectangle[] getRoads() {
+		return roads;
+	}
 
+	public double getyAxis() {
+		return yAxis;
+	}
 
 	@Override
 	public void checkCrash() {

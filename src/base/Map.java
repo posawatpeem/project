@@ -7,7 +7,7 @@ import javafx.scene.Group;
 import javafx.scene.layout.VBox;
 import Map.Road;  
 
-public  class Map extends VBox  {
+public  class Map extends VBox {
 	private ArrayList<Road> map ; 
 	private boolean check ; 
 	private Group groupMap ; 
@@ -29,22 +29,14 @@ public  class Map extends VBox  {
 		map.add(road5) ; 
 		map.add(road6) ; 
 		map.add(road7) ; 
-		this.getChildren().add(road1.getGroupRoad()) ; 
-		this.getChildren().add(road2.getGroupRoad()) ; 
-		this.getChildren().add(road3.getGroupRoad()) ; 
-		this.getChildren().add(road4.getGroupRoad()) ; 
-		this.getChildren().add(road5.getGroupRoad()) ; 
-		this.getChildren().add(road6.getGroupRoad()) ; 
-		this.getChildren().add(road7.getGroupRoad()) ; 
+		this.getChildren().add(road1.getRoads()[0]) ; 
+		this.getChildren().add(road2.getRoads()[0]) ; 
+		
 	}
 	
 	public boolean checkOut() {
-		if (map.get(0).getGroupRoad().getLayoutY()>600) {
-			this.check = true ; 
-			return true ; 
-		}
-		this.check = false ; 
-		return false ;	
+		return check;
+		
 	}
 	
 	public void addRoad() {
