@@ -29,7 +29,7 @@ public class Resloader {
 		rail2 = new ImageView(new Image(ClassLoader.getSystemResource("rail.png").toString()));
 		train = new ImageView(new Image(ClassLoader.getSystemResource("train.png").toString()));
 		howTo_BG = (new Image(ClassLoader.getSystemResource("howTobg.jpg").toString()));
-		exitButt = new Image(ClassLoader.getSystemResource("exit2.png").toString(),40,40,true,true) ; 
+		exitButt = new Image(ClassLoader.getSystemResource("exit2.png").toString(),35,35,true,true) ; 
 	}
 	
 }
