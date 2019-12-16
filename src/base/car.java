@@ -11,10 +11,9 @@ import javafx.scene.shape.Rectangle;
 import resloader.Resloader;
 public class car extends ObjectInMap implements moveAble{
 
-	private static final int velocity1 = 5 ;
-	private static final int velocity2 = 6 ; 
-	private static final int velocity3 = 7 ; 
-	private ImageView car1  ; 
+	private static final int velocity1 = 3 ;
+	private static final int velocity2 = 4 ; 
+	private static final int velocity3 = 5 ; 
 	private double yLayout ; 
 	private double xLayout ; 
 	private AnimationTimer timer ; 
