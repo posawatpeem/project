@@ -16,8 +16,8 @@ public class Train extends ObjectInMap implements moveAble{
 	private double yLayout ; 
 	private AnimationTimer timer ; 
 
-	public Train(double yAxis) {
-		super(yAxis);
+	public Train(double xAxis , double yAxis) {
+		super(xAxis , yAxis);
 		this.move();
 	}
 
@@ -39,7 +39,7 @@ public class Train extends ObjectInMap implements moveAble{
 	}
 
 	@Override
-	public void setSpawnPosition(double yAxis) {
+	public void setSpawnPosition(double xAxis , double yAxis) {
 		// TODO Auto-generated method stub
 		this.yLayout = yAxis-25 ; 
 		trainGroup.setLayoutY(this.yLayout);

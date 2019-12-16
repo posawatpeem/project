@@ -23,8 +23,8 @@ public class Road  extends ObjectInMap implements moveAble{
 	private Rectangle[] roads ; 
 	private AnimationTimer timer ; 
 	
-	public Road(int yAxis ) {
-		super(yAxis) ;  
+	public Road(double xAxis , double yAxis ) {
+		super(xAxis ,yAxis) ;  
 		this.Car = new ArrayList<car>()  ;  
 		this.createCar();
 		this.move();
@@ -42,7 +42,7 @@ public class Road  extends ObjectInMap implements moveAble{
 
 
 	@Override
-	public void setSpawnPosition(double yAxis) {
+	public void setSpawnPosition(double xAxis , double yAxis) {
 		// TODO Auto-generated method stub
 		roads[0].setLayoutX(0);
 		roads[0].setLayoutY(yAxis);
@@ -51,7 +51,8 @@ public class Road  extends ObjectInMap implements moveAble{
 	
 	
 	public void createCar() { 
-		car car1 = new car(this.yAxis) ; 
+		
+		car car1 = new car(300 , this.yAxis) ; 
 		Car.add(car1) ;
 	}
 

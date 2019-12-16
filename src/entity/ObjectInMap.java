@@ -2,11 +2,12 @@ package entity;
 
 public abstract class ObjectInMap {
 	
-	public ObjectInMap(double yAxis) {
+	public ObjectInMap(double xAxis , double yAxis) {
 		setGc();
-		setSpawnPosition(yAxis);
+		setSpawnPosition(xAxis , yAxis);
+		
 	}
 	
 	public abstract void setGc();
-	public abstract void setSpawnPosition(double yAxis) ; 
+	public abstract void setSpawnPosition(double xAxis , double yAxis) ; 
 }

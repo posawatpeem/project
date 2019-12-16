@@ -21,6 +21,8 @@ public class Resloader {
 	public static Image unmuteBtn ; 
 	public static Image grass_BG;
 	public static Image gameOver_BG;
+	public static Image tree ; 
+	public static Image footpath ; 
 	
 	public static void load() {
 		
@@ -36,7 +38,9 @@ public class Resloader {
 		grass_BG = new Image(ClassLoader.getSystemResource("grassBg.png").toString());
 		gameOver_BG = new Image(ClassLoader.getSystemResource("window.jpg").toString());
 		gameOver = new ImageView(new Image(ClassLoader.getSystemResource("gameover.png").toString())) ; 
-		
+		tree = new Image(ClassLoader.getSystemResource("tree.png").toString()) ; 
+		footpath = new Image(ClassLoader.getSystemResource("footpath.png").toString()) ; 
+				
 	}
 	
 }

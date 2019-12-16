@@ -18,8 +18,8 @@ public class RailRoad extends ObjectInMap{
 	private double yAxis;
 	private Rectangle[] rails ;
 	
-	public RailRoad(int yAxis) {
-		super(yAxis);
+	public RailRoad(double xAxis , double yAxis) {
+		super(xAxis , yAxis);
 		this.train = new ArrayList<Train>();
 		this.createTrain();
 	}
@@ -43,17 +43,6 @@ public class RailRoad extends ObjectInMap{
 		rails[0].setFill(new ImagePattern(Resloader.rail2));
 	}
 
-	@Override
-	public void setSpawnPosition(double yAxis) {
-		// TODO Auto-generated method stub
-		/*this.groupRail.setLayoutX(0);
-		this.groupRail.setLayoutY(yAxis);
-		this.yAxis = yAxis;*/
-		
-		rails[0].setLayoutX(0);
-		rails[0].setLayoutY(yAxis);
-		this.yAxis = yAxis ; 
-	}
 	
 	public void createTrain() {
 		train = new ArrayList<Train>() ; 
@@ -62,7 +51,7 @@ public class RailRoad extends ObjectInMap{
 			int max =6 ; 
 			int carNum = min +(int)(Math.random()*((max-min)+1)) ;
 			for (int j = 0 ; j < carNum ;j++) {
-				Train train1 = new Train(this.yAxis) ; 
+				Train train1 = new Train(300 , this.yAxis) ; 
 				train.add(train1) ;
 			}
 		}
@@ -74,6 +63,20 @@ public class RailRoad extends ObjectInMap{
 
 	public ArrayList<Train> getTrain() {
 		return train;
+	}
+
+
+	@Override
+	public void setSpawnPosition(double xAxis, double yAxis) {
+		// TODO Auto-generated method stub
+		// TODO Auto-generated method stub
+				/*this.groupRail.setLayoutX(0);
+				this.groupRail.setLayoutY(yAxis);
+				this.yAxis = yAxis;*/
+				
+				rails[0].setLayoutX(0);
+				rails[0].setLayoutY(yAxis);
+				this.yAxis = yAxis ; 
 	}
 
 }

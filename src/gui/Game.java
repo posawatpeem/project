@@ -115,10 +115,8 @@ public class Game {
 			@Override
 			public void handle(long arg0) {
 				// TODO Auto-generated method stub
-				System.out.print(2);
 				if (map.checkOut()) {
 					map.addRoad();
-					System.out.print(1);
 				}
 			}
 			

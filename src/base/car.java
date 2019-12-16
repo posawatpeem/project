@@ -19,8 +19,8 @@ public class car extends ObjectInMap implements moveAble{
 	private AnimationTimer timer ; 
 	private Rectangle[] cars ; 
 	
-	public car(double y) {
-		super(y) ; 
+	public car(double x , double y) {
+		super(x , y) ; 
 		this.move() ;
 		
 	}
@@ -38,7 +38,7 @@ public class car extends ObjectInMap implements moveAble{
 	}
 
 	@Override
-	public void setSpawnPosition(double yAxis) {
+	public void setSpawnPosition(double xAxis , double yAxis) {
 		// TODO Auto-generated method stub
 		this.yLayout = yAxis ; 
 		cars[0].setLayoutX(300);
