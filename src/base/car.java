@@ -16,6 +16,7 @@ public class car extends ObjectInMap implements moveAble{
 	private static final int velocity3 = 7 ; 
 	private ImageView car1  ; 
 	private double yLayout ; 
+	private double xLayout ; 
 	private AnimationTimer timer ; 
 	private Rectangle[] cars ; 
 	
@@ -33,7 +34,7 @@ public class car extends ObjectInMap implements moveAble{
 	public void setGc() {
 		// TODO Auto-generated method stub
 		cars = new Rectangle[1] ;
-		cars[0] = new Rectangle(50,100) ;
+		cars[0] = new Rectangle(100,100) ;
 		cars[0].setFill(new ImagePattern(Resloader.car)) ; 
 	}
 
@@ -41,7 +42,8 @@ public class car extends ObjectInMap implements moveAble{
 	public void setSpawnPosition(double xAxis , double yAxis) {
 		// TODO Auto-generated method stub
 		this.yLayout = yAxis ; 
-		cars[0].setLayoutX(300);
+		this.xLayout = xAxis ; 
+		cars[0].setLayoutX(xAxis);
 		cars[0].setLayoutY(yAxis);
 	}
 
@@ -55,9 +57,7 @@ public class car extends ObjectInMap implements moveAble{
 				// TODO Auto-generated method stub
 				cars[0].setLayoutX(cars[0].getLayoutX() - velocity1);
 				cars[0].setLayoutY(cars[0].getLayoutY() + 1 );
-				if (cars[0].getLayoutX() ==-50) {
-					timer.stop();
-				}
+				
 			}
 			
 		};

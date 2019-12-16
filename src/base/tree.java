@@ -26,7 +26,6 @@ public class tree extends ObjectInMap implements moveAble {
 	public void move() {
 		// TODO Auto-generated method stub
 		timer = new AnimationTimer() {
-
 			@Override
 			public void handle(long arg0) {
 				// TODO Auto-generated method stub

@@ -38,6 +38,9 @@ public  class Map  {
 		for (int i =0 ; i< 7 ;i++) {
 			if (map.get(i) instanceof Road) {
 				box.getChildren().addAll(((Road) map.get(i)).getRoads()[0]) ;
+				for (car x : ((Road)map.get(i)).getCar()) {
+					box.getChildren().addAll(x.getCars()) ; 
+				}
 			}
 			if (map.get(i) instanceof footpath) {
 				box.getChildren().add(((footpath) map.get(i)).getFootpaths()[0]) ; 

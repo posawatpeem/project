@@ -16,12 +16,14 @@ import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Rectangle;
 import resloader.Resloader;
 public class Road  extends ObjectInMap implements moveAble{
-	private int numRoads ; 
+	private int numCar ; 
 	private ArrayList<car> Car ; 
 	private double yAxis ; 
 	private Thread thread ; 
 	private Rectangle[] roads ; 
 	private AnimationTimer timer ; 
+	private static final int  maxCar = 4 ; 
+	private static final int minCar =1 ; 
 	
 	public Road(double xAxis , double yAxis ) {
 		super(xAxis ,yAxis) ;  
@@ -51,9 +53,15 @@ public class Road  extends ObjectInMap implements moveAble{
 	
 	
 	public void createCar() { 
-		
-		car car1 = new car(300 , this.yAxis) ; 
-		Car.add(car1) ;
+		numCar = (int) ((Math.random() * (maxCar - minCar +1)) +minCar) ; 
+		System.out.print(numCar);
+		for (int i = 0 ; i < numCar ; i++) {
+			int randomX = (int)((Math.random()*(400 -20 +1))+20) ; 
+			randomX  = randomX%4 ; 	
+			randomX = randomX*100 ; 
+			car car1 = new car(randomX , this.yAxis) ; 
+			Car.add(car1) ;
+		}
 	}
 
 
@@ -70,6 +78,7 @@ public class Road  extends ObjectInMap implements moveAble{
 			public void handle(long arg0) {
 				// TODO Auto-generated method stub
 				roads[0].setLayoutY(roads[0].getLayoutY() + 1);
+				
 				
 			}
 			
@@ -92,6 +101,9 @@ public class Road  extends ObjectInMap implements moveAble{
 		
 	}
 
+	public void checkOut() {
+		
+	}
 
 
 	
