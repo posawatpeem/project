@@ -1,4 +1,4 @@
-package gui;
+package gui2;
 
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -58,7 +58,7 @@ public class GameOver {
 		this.mainMenuBtn.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent event) {
-				gui.mainMenu.mainStage.setScene(gui.mainMenu.gameScene);
+				gui2.mainMenu.mainStage.setScene(gui2.mainMenu.gameScene);
 			}
 		});
 	}

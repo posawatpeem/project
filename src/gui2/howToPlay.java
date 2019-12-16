@@ -1,4 +1,4 @@
-package gui;
+package gui2;
 
 import javafx.event.EventHandler;
 import javafx.geometry.Pos;
@@ -144,7 +144,7 @@ public class howToPlay  {
 			@Override
 			public void handle(MouseEvent event) {
 				exit = true ; 
-				gui.mainMenu.mainStage.setScene(gui.mainMenu.gameScene);
+				gui2.mainMenu.mainStage.setScene(gui2.mainMenu.gameScene);
 				
 			}
 		});

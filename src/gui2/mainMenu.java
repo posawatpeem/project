@@ -1,4 +1,4 @@
-package gui;
+package gui2;
 
 import java.net.URISyntaxException;
 

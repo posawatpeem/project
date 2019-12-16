@@ -3,7 +3,7 @@ package application;
 
 import base.Fox;
 import entity.Player;
-import gui.mainMenu;
+import gui2.mainMenu;
 import javafx.application.Application;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
