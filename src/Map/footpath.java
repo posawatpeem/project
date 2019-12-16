@@ -18,13 +18,19 @@ public class footpath extends ObjectInMap implements moveAble {
 	private AnimationTimer timer ; 
 	private ArrayList<tree> Tree ; 
 	private double Y ; 
+	public static final int maxTree =5  ; 
+	public static final int minTree =1 ;
 	
-	
+	public ArrayList<tree> getTree() {
+		return Tree;
+	}
+
 	public footpath(double xAxis, double yAxis) {
 		super(xAxis, yAxis);
 		this.Y = yAxis ; 
 		// TODO Auto-generated constructor stub
 		this.Tree = new ArrayList<tree>() ; 
+		this.createTree();
 		this.move() ; 
 		
 	}
@@ -70,8 +76,14 @@ public class footpath extends ObjectInMap implements moveAble {
 		
 	}
 	public void createTree() {
-		tree t = new tree(100 ,this.Y) ; 
-		Tree.add(t) ; 
+		int numTree = (int)((Math.random() * (maxTree - minTree +1)) +minTree) ; 
+		for (int i = 0 ; i < numTree ;i++) {
+			int x = (int)(Math.random() * (100 - 1 +1 ) +1) ; 
+			x = x % 40 ; 
+			x = x * 40 ; 
+			tree tree = new tree(x , this.footpaths[0].getLayoutY()) ; 
+			Tree.add(tree) ; 
+		}
 	}
 
 }

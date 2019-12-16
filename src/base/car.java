@@ -74,10 +74,5 @@ public class car extends ObjectInMap implements moveAble{
 		// TODO Auto-generated method stub
 		
 	}
-
-	public boolean isOutScene() {
-		return outScene;
-	}
-	
 	
 }

@@ -16,14 +16,13 @@ import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Rectangle;
 import resloader.Resloader;
 public class Road  extends ObjectInMap implements moveAble{
-	private int numCar ; 
+	
 	private ArrayList<car> Car ; 
-	private double yAxis ; 
 	private Thread thread ; 
 	private Rectangle[] roads ; 
 	private AnimationTimer timer ; 
-	private static final int  maxCar = 4 ; 
-	private static final int minCar =1 ;
+	private static final int  maxCar = 20 ; 
+	private static final int minCar =10 ;
 	private boolean out ; 
 	private car newCar ; 
 	
@@ -51,19 +50,23 @@ public class Road  extends ObjectInMap implements moveAble{
 		// TODO Auto-generated method stub
 		roads[0].setLayoutX(0);
 		roads[0].setLayoutY(yAxis);
-		this.yAxis = yAxis ; 
+		
 	}
 	
 	
 	public void createCar() { 
-		numCar = (int) ((Math.random() * (maxCar - minCar +1)) +minCar) ; 
+		int numCar = (int) ((Math.random() * (maxCar - minCar +1)) +minCar) ; 
+		int randomX = 50 ;
 		for (int i = 0 ; i < numCar ; i++) {
-			int randomX = (int)((Math.random()*(400 -20 +1))+20) ; 
-			randomX  = randomX%4 ; 	
-			randomX = randomX*100 ; 
-			car car1 = new car(randomX , this.yAxis) ; 
+			int X = (int)((Math.random() * (100 -1 +1 ))+1) ;
+			randomX= randomX+X ; 
+			randomX = randomX%50 ; 
+			randomX =randomX*100;
+			car car1 = new car(randomX , this.roads[0].getLayoutY()) ; 
 			Car.add(car1) ;
+		 
 		}
+		
 	}
 
 
@@ -80,7 +83,6 @@ public class Road  extends ObjectInMap implements moveAble{
 			public void handle(long arg0) {
 				// TODO Auto-generated method stub
 				roads[0].setLayoutY(roads[0].getLayoutY() + 1);
-				checkOut();
 			}
 			
 		};
@@ -92,9 +94,7 @@ public class Road  extends ObjectInMap implements moveAble{
 		return roads;
 	}
 
-	public double getyAxis() {
-		return yAxis;
-	}
+	
 
 	public boolean isOut() {
 		return out;
@@ -105,34 +105,5 @@ public class Road  extends ObjectInMap implements moveAble{
 		// TODO Auto-generated method stub
 		
 	}
-
-	public void checkOut() {
-		if (Car.get(0).isOutScene()) {
-			this.out = true ; 
-		}
-	}
-	
-	public void addNewCar() {
-		if (this.out) {
-			Car.remove(0) ; 
-			int ran = (int)((Math.random()) *(100 - 1 +1)+1) ; 
-			if (ran %2 == 0) {
-				newCar = new car(400 , this.yAxis) ; 
-				Car.add(newCar);
-				this.out =false ; 
-			}if (Car.size() == 0 ) {
-				newCar = new car(400 , this.yAxis) ; 
-				Car.add(newCar);
-				this.out = false ; 
-				
-			}
-		}
-	}
-
-	public car getNewCar() {
-		return newCar;
-	}
-	
-
 	
 }

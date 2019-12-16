@@ -45,7 +45,7 @@ public class tree extends ObjectInMap implements moveAble {
 	public void setGc() {
 		// TODO Auto-generated method stub
 		trees = new Rectangle[1] ;
-		trees[0] = new Rectangle(50,100) ; 
+		trees[0] = new Rectangle(40,100) ; 
 		trees[0].setFill(new ImagePattern(Resloader.tree)) ; 
 	}
 	@Override

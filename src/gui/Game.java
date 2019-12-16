@@ -34,7 +34,6 @@ public class Game {
 	private AnimationTimer Timer ; 
 	private AnimationTimer Loop ; 
 	
-	private RailRoad railRoad;
 	private int size ; 
 	private Map map ; 
 	
@@ -112,7 +111,13 @@ public class Game {
 			public void handle(long arg0) {
 				// TODO Auto-generated method stub
 				if (map.checkOut()) {
-					map.addRoad();
+					int random = (int)(Math.random() * (100 - 1 +1 ) +1) ; 
+					if (random % 3 == 0) {
+						map.addfootpath(); 
+					}
+					else {
+						map.addRoad();
+					}
 				}
 			}
 			
