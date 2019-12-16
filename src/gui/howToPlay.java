@@ -29,6 +29,7 @@ import resloader.Resloader;
 
 public class howToPlay  {
 	
+	private int count;
 	private Text howToText;
 	private Text firstRules;
 	private Text secondRules;
