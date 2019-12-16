@@ -10,7 +10,7 @@ public class Resloader {
 	public static ImageView train ; 
 	public static ImageView rail ; 
 	public static Image rail2 ; 
-	public static ImageView car ; 
+	public static Image car ; 
 	public static ImageView river ; 
 	public static Image road ; 
 	public static Image exitButt ;
@@ -24,7 +24,7 @@ public class Resloader {
 		
 		fox = new ImageView(new Image(ClassLoader.getSystemResource("fox1.png").toString())) ; 
 		MAIN_BG = new Image(ClassLoader.getSystemResource("background.jpg").toString());
-		car = new ImageView(new Image(ClassLoader.getSystemResource("car.png").toString())) ; 
+		car = new Image(ClassLoader.getSystemResource("car.png").toString()) ; 
 		muteBtn = new Image(ClassLoader.getSystemResource("volume.png").toString(),30,30,true,true) ; 
 		road = new Image(ClassLoader.getSystemResource("road.jpg").toString());
 		rail2 = (new Image(ClassLoader.getSystemResource("rail2.png").toString()));

@@ -89,22 +89,13 @@ public class Game {
 	public void newGame() {
 		player = new Player() ; 
 		map = new Map(); 
-		gamePane.getChildren().add(map) ; 
-		
-		/*for (ObjectInMap x : map) {
-			if (x instanceof Road) {
-				for (car y : ((Road) x).getCar()) {
-					gamePane.getChildren().add(y.getCarGroup()) ; 
-				}
-			}
-		}*/
+		gamePane.getChildren().add(map.getBox()) ; 
 		gamePane.getChildren().add(player.getFoxGroup()) ; 
 		player.getFoxGroup().toFront();
 	}
 	public void setSceneGame() {
 		 gamePane = new AnchorPane();
 		 //gamePane.setStyle("-fx-background-color: #63c900;");
-		 
 		 BackgroundImage wallpaper = new BackgroundImage(Resloader.grass_BG,
 	                BackgroundRepeat.NO_REPEAT,
 	                BackgroundRepeat.NO_REPEAT,

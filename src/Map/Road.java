@@ -62,8 +62,8 @@ public class Road  extends ObjectInMap implements moveAble{
 
 	@Override
 	public void move() {
-		// TODO Auto-generated method stub
-		/*this.thread = new Thread(new Runnable() {
+		/*// TODO Auto-generated method stub
+		this.thread = new Thread(new Runnable() {
 			@Override
 			public void run() {
 				// TODO Auto-generated method stub
@@ -72,9 +72,9 @@ public class Road  extends ObjectInMap implements moveAble{
 					public void run() {
 						// TODO Auto-generated method stub
 						try {
-							groupRoad.setLayoutY(groupRoad.getLayoutY()+1 );
+							roads[0].setLayoutY(roads[0].getLayoutY()+1 );
 							for(car x : Car ) {
-								x.getCarGroup().setLayoutY(x.getCarGroup().getLayoutY()+1);
+								x.getCars()[0].setLayoutY(x.getCars()[0].getLayoutY()+1);
 							}
 							thread.sleep(10);
 						} catch (InterruptedException e) {
