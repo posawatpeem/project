@@ -8,6 +8,7 @@ import javafx.scene.image.ImageView;
 public class Resloader {
 	public static ImageView fox ; 
 	public static ImageView train ; 
+	public static ImageView gameOver ;
 	public static ImageView rail ; 
 	public static Image rail2 ; 
 	public static Image car ; 
@@ -19,6 +20,7 @@ public class Resloader {
 	public static Image muteBtn ;
 	public static Image unmuteBtn ; 
 	public static Image grass_BG;
+	public static Image gameOver_BG;
 	
 	public static void load() {
 		
@@ -32,6 +34,9 @@ public class Resloader {
 		howTo_BG = (new Image(ClassLoader.getSystemResource("howTobg.jpg").toString()));
 		exitButt = new Image(ClassLoader.getSystemResource("exit2.png").toString(),35,35,true,true) ; 
 		grass_BG = new Image(ClassLoader.getSystemResource("grassBg.png").toString());
+		gameOver_BG = new Image(ClassLoader.getSystemResource("window.jpg").toString());
+		gameOver = new ImageView(new Image(ClassLoader.getSystemResource("gameover.png").toString())) ; 
+		
 	}
 	
 }

@@ -43,12 +43,14 @@ public class mainMenu  {
 	public static final int Height = 600 ; 
 	private boolean newMenu ; 
 	private howToPlay hT ; 
+	private GameOver gO;
 	public mainMenu () {
 		
 		Resloader.load();
 		this.createMenu();
 		this.initializeMain();
 		hT = new howToPlay();
+		gO = new GameOver();
 		mainStage = new Stage();
 		mainStage.setTitle("Foxxy Road");
 		mainStage.setScene(gameScene);
@@ -82,6 +84,7 @@ public class mainMenu  {
 			@Override
 			public void handle(ActionEvent event) {
 				mainStage.setScene(hT.getGameScene());
+				//mainStage.setScene(gO.getGameScene());
 				
 			}
 		});
