@@ -7,6 +7,7 @@ import base.moveAble;
 import entity.Entity;
 import entity.ObjectInMap;
 import javafx.animation.Animation;
+import javafx.animation.AnimationTimer;
 import javafx.application.Platform;
 import javafx.scene.Group;
 import javafx.scene.image.Image;
@@ -20,6 +21,7 @@ public class Road  extends ObjectInMap implements moveAble{
 	private double yAxis ; 
 	private Thread thread ; 
 	private Rectangle[] roads ; 
+	private AnimationTimer timer ; 
 	
 	public Road(int yAxis ) {
 		super(yAxis) ;  
@@ -62,31 +64,16 @@ public class Road  extends ObjectInMap implements moveAble{
 
 	@Override
 	public void move() {
-		/*// TODO Auto-generated method stub
-		this.thread = new Thread(new Runnable() {
+		timer = new AnimationTimer(){
 			@Override
-			public void run() {
+			public void handle(long arg0) {
 				// TODO Auto-generated method stub
-				Platform.runLater(new Runnable() {
-					@Override
-					public void run() {
-						// TODO Auto-generated method stub
-						try {
-							roads[0].setLayoutY(roads[0].getLayoutY()+1 );
-							for(car x : Car ) {
-								x.getCars()[0].setLayoutY(x.getCars()[0].getLayoutY()+1);
-							}
-							thread.sleep(10);
-						} catch (InterruptedException e) {
-							// TODO Auto-generated catch block
-							e.printStackTrace();
-						};
-					}
-				});
-	
+				roads[0].setLayoutY(roads[0].getLayoutY() + 1);
+				
 			}
-		});
-		thread.start(); */
+			
+		};
+		timer.start();
 	}
 
 	

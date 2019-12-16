@@ -54,6 +54,7 @@ public class car extends ObjectInMap implements moveAble{
 			public void handle(long arg0) {
 				// TODO Auto-generated method stub
 				cars[0].setLayoutX(cars[0].getLayoutX() - velocity1);
+				cars[0].setLayoutY(cars[0].getLayoutY() + 1 );
 				if (cars[0].getLayoutX() ==-50) {
 					timer.stop();
 				}

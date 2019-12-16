@@ -9,7 +9,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 import Map.Road;  
 
-public  class Map  implements moveAble {
+public  class Map  {
 	private ArrayList<Road> map ; 
 	private boolean check ; 
 	private Group groupMap ; 
@@ -19,6 +19,7 @@ public  class Map  implements moveAble {
 	public Map() {
 		box = new AnchorPane() ; 
 		map = new ArrayList<Road>();
+		this.check = false ; 
 		Road road1 = new Road(500);
 		Road road2 = new Road(400) ; 
 		Road road3 = new Road(300) ; 
@@ -47,6 +48,9 @@ public  class Map  implements moveAble {
 	}
 
 	public boolean checkOut() {
+		if (map.get(0).getRoads()[0].getLayoutY() == 600) {
+			this.check = true ;
+		}
 		return check;
 		
 	}
@@ -56,6 +60,11 @@ public  class Map  implements moveAble {
 			map.remove(0) ; 
 			Road road = new Road(-100) ; 
 			map.add(road) ; 	
+			box.getChildren().add(map.get(map.size()-1).getRoads()[0]) ; 
+			for (car x : map.get(map.size()-1).getCar()) {
+				box.getChildren().addAll(x.getCars()) ; 
+			}
+			this.check = false; 
 		}
 	}
 
@@ -63,22 +72,6 @@ public  class Map  implements moveAble {
 		return map;
 	}
 
-	@Override
-	public void move() {
-		// TODO Auto-generated method stub
-		timer = new AnimationTimer() {
-			@Override
-			public void handle(long arg0) {
-				// TODO Auto-generated method s
-				box.setLayoutY(box.getLayoutY() +1 );
-			}
-		};
-	}
 
-	@Override
-	public void checkCrash() {
-		// TODO Auto-generated method stub
-		
-	}
 }
 
