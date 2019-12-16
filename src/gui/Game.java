@@ -16,6 +16,7 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.BackgroundImage;
 import javafx.scene.layout.BackgroundPosition;
 import javafx.scene.layout.BackgroundRepeat;
@@ -95,13 +96,8 @@ public class Game {
 	}
 	public void setSceneGame() {
 		 gamePane = new AnchorPane();
-		 //gamePane.setStyle("-fx-background-color: #63c900;");
-		 BackgroundImage wallpaper = new BackgroundImage(Resloader.grass_BG,
-	                BackgroundRepeat.NO_REPEAT,
-	                BackgroundRepeat.NO_REPEAT,
-	                BackgroundPosition.CENTER,
-	                new BackgroundSize(1.0, 1.0, true, true, false, false));;
-	       gamePane.setBackground(new Background(wallpaper));
+		 gamePane.setBackground(new Background(new BackgroundFill(Color.BLACK, null, null)));
+		 
 		 
 		 gameScene =new Scene(gamePane,400,600) ;
 		 gameStage = new Stage() ; 
