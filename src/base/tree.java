@@ -53,7 +53,7 @@ public class tree extends ObjectInMap implements moveAble {
 		// TODO Auto-generated method stub
 		this.yLayout = yAxis ; 
 		trees[0].setLayoutY(yAxis);
-		trees[0].setLayoutX(50);
+		trees[0].setLayoutX(xAxis);
 	
 	}
 

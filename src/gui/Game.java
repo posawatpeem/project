@@ -112,7 +112,7 @@ public class Game {
 				// TODO Auto-generated method stub
 				if (map.checkOut()) {
 					int random = (int)(Math.random() * (100 - 1 +1 ) +1) ; 
-					if (random % 3 == 0) {
+					if (random % 2 == 0) {
 						map.addfootpath(); 
 					}
 					else {

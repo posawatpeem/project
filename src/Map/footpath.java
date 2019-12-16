@@ -19,7 +19,7 @@ public class footpath extends ObjectInMap implements moveAble {
 	private ArrayList<tree> Tree ; 
 	private double Y ; 
 	public static final int maxTree =5  ; 
-	public static final int minTree =1 ;
+	public static final int minTree =3 ;
 	
 	public ArrayList<tree> getTree() {
 		return Tree;
@@ -79,8 +79,8 @@ public class footpath extends ObjectInMap implements moveAble {
 		int numTree = (int)((Math.random() * (maxTree - minTree +1)) +minTree) ; 
 		for (int i = 0 ; i < numTree ;i++) {
 			int x = (int)(Math.random() * (100 - 1 +1 ) +1) ; 
-			x = x % 40 ; 
-			x = x * 40 ; 
+			x = x % 20 ; 
+			x = x * 20 ; 
 			tree tree = new tree(x , this.footpaths[0].getLayoutY()) ; 
 			Tree.add(tree) ; 
 		}
