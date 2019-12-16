@@ -174,9 +174,7 @@ public class howToPlay  {
 		x.setFont(Font.loadFont(ClassLoader.getSystemResource("Kenney_Pixel.ttf").toString(), 40));
 	}
 	
-	public void yeah() {
-		
-	}
+	
 
 	
 	
