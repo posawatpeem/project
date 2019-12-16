@@ -39,11 +39,10 @@ public class mainMenu  {
 	private SoundButton soundBtn;
 	public static Stage mainStage;
 	public static Scene gameScene ;
-	public static final int Width = 400 ; 
-	public static final int Height = 600 ; 
 	private boolean newMenu ; 
 	private howToPlay hT ; 
 	private GameOver gO;
+	
 	public mainMenu () {
 		
 		Resloader.load();
@@ -66,7 +65,7 @@ public class mainMenu  {
 		this.initializeTitle();
 		this.initializeSoundButton();
 		this.createBg();
-		gameScene = new Scene(mainPane,Width,Height);
+		gameScene = new Scene(mainPane,GameSetting.Game_width,GameSetting.Game_height);
 		
 		
 	}

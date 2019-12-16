@@ -14,7 +14,7 @@ public class Resloader {
 	public static Image car ; 
 	public static ImageView river ; 
 	public static Image road ; 
-	public static Image exitButt ;
+	public static ImageView exitButt ;
 	public static Image MAIN_BG;
 	public static Image howTo_BG;
 	public static Image muteBtn ;
@@ -34,7 +34,7 @@ public class Resloader {
 		rail2 = (new Image(ClassLoader.getSystemResource("rail2.png").toString()));
 		train = new ImageView(new Image(ClassLoader.getSystemResource("train.png").toString()));
 		howTo_BG = (new Image(ClassLoader.getSystemResource("howTobg.jpg").toString()));
-		exitButt = new Image(ClassLoader.getSystemResource("exit2.png").toString(),35,35,true,true) ; 
+		exitButt = new ImageView(new Image(ClassLoader.getSystemResource("exit2.png").toString(),35,35,true,true)) ; 
 		grass_BG = new Image(ClassLoader.getSystemResource("grassBg.png").toString());
 		gameOver_BG = new Image(ClassLoader.getSystemResource("window.jpg").toString());
 		gameOver = new ImageView(new Image(ClassLoader.getSystemResource("gameover.png").toString())) ; 

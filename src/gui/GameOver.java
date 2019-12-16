@@ -17,8 +17,7 @@ import resloader.Resloader;
 
 public class GameOver {
 	
-	public static final int Width = 400 ; 
-	public static final int Height = 600 ;
+	
 	private Buttons playAgainBtn;
 	private Buttons mainMenuBtn;
 	private VBox buttonPane;
@@ -41,7 +40,7 @@ public class GameOver {
 		this.initializeButton();
 		this.initializeMain();
 		this.createBg();
-		gameScene = new Scene(mainPane,Width,Height);
+		gameScene = new Scene(mainPane,GameSetting.Game_width,GameSetting.Game_height);
 		
 	}
 	

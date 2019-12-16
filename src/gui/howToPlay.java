@@ -29,8 +29,6 @@ import resloader.Resloader;
 
 public class howToPlay  {
 	
-	public static final int Width = 400 ; 
-	public static final int Height = 600 ; 
 	private Text howToText;
 	private Text firstRules;
 	private Text secondRules;
@@ -39,7 +37,6 @@ public class howToPlay  {
 	private AnchorPane mainPane;
 	private VBox textBox;
 	private Button exitButt;
-	private ImageView btnBg;
 	private Scene gameScene ;
 	private HBox subTextBox;
 	private boolean exit ; 
@@ -50,7 +47,7 @@ public class howToPlay  {
 		exit = false ; 
 		this.TextBox();
 		this.createBg();
-		gameScene = new Scene(mainPane,Width,Height);
+		gameScene = new Scene(mainPane,GameSetting.Game_width,GameSetting.Game_height);
 		Stage mainStage = new Stage();
 
 		mainStage.setTitle("Foxxy Road");
@@ -123,10 +120,10 @@ public class howToPlay  {
 	private void initializedButton() {
 		
 		this.exitButt = new Button();
-		this.btnBg = new ImageView(Resloader.exitButt);
+
 		this.exitButt.setPrefHeight(50);
 		this.exitButt.setPrefWidth(50);
-		this.exitButt.setGraphic(this.btnBg);
+		this.exitButt.setGraphic(Resloader.exitButt);
 		this.exitButt.setStyle("-fx-background-color: #CAAC73");
 		this.exitButt.setAlignment(Pos.TOP_LEFT);
 		
