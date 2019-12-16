@@ -23,10 +23,13 @@ public class Road  extends ObjectInMap implements moveAble{
 	private Rectangle[] roads ; 
 	private AnimationTimer timer ; 
 	private static final int  maxCar = 4 ; 
-	private static final int minCar =1 ; 
+	private static final int minCar =1 ;
+	private boolean out ; 
+	private car newCar ; 
 	
 	public Road(double xAxis , double yAxis ) {
-		super(xAxis ,yAxis) ;  
+		super(xAxis ,yAxis) ; 
+		this.out = false ;
 		this.Car = new ArrayList<car>()  ;  
 		this.createCar();
 		this.move();
@@ -54,7 +57,6 @@ public class Road  extends ObjectInMap implements moveAble{
 	
 	public void createCar() { 
 		numCar = (int) ((Math.random() * (maxCar - minCar +1)) +minCar) ; 
-		System.out.print(numCar);
 		for (int i = 0 ; i < numCar ; i++) {
 			int randomX = (int)((Math.random()*(400 -20 +1))+20) ; 
 			randomX  = randomX%4 ; 	
@@ -78,8 +80,7 @@ public class Road  extends ObjectInMap implements moveAble{
 			public void handle(long arg0) {
 				// TODO Auto-generated method stub
 				roads[0].setLayoutY(roads[0].getLayoutY() + 1);
-				
-				
+				checkOut();
 			}
 			
 		};
@@ -95,6 +96,10 @@ public class Road  extends ObjectInMap implements moveAble{
 		return yAxis;
 	}
 
+	public boolean isOut() {
+		return out;
+	}
+
 	@Override
 	public void checkCrash() {
 		// TODO Auto-generated method stub
@@ -102,9 +107,32 @@ public class Road  extends ObjectInMap implements moveAble{
 	}
 
 	public void checkOut() {
-		
+		if (Car.get(0).isOutScene()) {
+			this.out = true ; 
+		}
+	}
+	
+	public void addNewCar() {
+		if (this.out) {
+			Car.remove(0) ; 
+			int ran = (int)((Math.random()) *(100 - 1 +1)+1) ; 
+			if (ran %2 == 0) {
+				newCar = new car(400 , this.yAxis) ; 
+				Car.add(newCar);
+				this.out =false ; 
+			}if (Car.size() == 0 ) {
+				newCar = new car(400 , this.yAxis) ; 
+				Car.add(newCar);
+				this.out = false ; 
+				
+			}
+		}
 	}
 
+	public car getNewCar() {
+		return newCar;
+	}
+	
 
 	
 }

@@ -15,7 +15,9 @@ public  class Map  {
 	private boolean check ; 
 	private Group groupMap ; 
 	private AnimationTimer timer ; 
+	private AnimationTimer newcar ; 
 	private AnchorPane box ; 
+	
 	
 	public Map() {
 		box = new AnchorPane() ; 
@@ -46,7 +48,7 @@ public  class Map  {
 				box.getChildren().add(((footpath) map.get(i)).getFootpaths()[0]) ; 
 			}
 		}
-		
+		//this.addNewCar();
 		
 	}
 	
@@ -83,7 +85,26 @@ public  class Map  {
 	public ArrayList<ObjectInMap> getMap() {
 		return map;
 	}
-
-
+	
+	public void addNewCar() {
+		newcar = new AnimationTimer() {
+			@Override
+			public void handle(long arg0) {
+				// TODO Auto-generated method stub
+				for (int i = 0 ; i< 7 ; i++) {
+					if (map.get(i) instanceof Road) {
+						((Road)map.get(i)).checkOut();
+						if (((Road)map.get(i)).isOut()) {
+							((Road)map.get(i)).addNewCar();
+							 box.getChildren().add(((Road)map.get(i)).getNewCar().getCars()[0]) ; 
+							System.out.print(1);
+						}
+					}
+				}
+			}
+			
+		};
+		newcar.start();
+	}
 }
 

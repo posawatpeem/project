@@ -19,10 +19,12 @@ public class car extends ObjectInMap implements moveAble{
 	private double xLayout ; 
 	private AnimationTimer timer ; 
 	private Rectangle[] cars ; 
+	private boolean outScene ; 
 	
 	public car(double x , double y) {
 		super(x , y) ; 
 		this.move() ;
+		this.outScene = false ; 
 		
 	}
 
@@ -57,6 +59,9 @@ public class car extends ObjectInMap implements moveAble{
 				// TODO Auto-generated method stub
 				cars[0].setLayoutX(cars[0].getLayoutX() - velocity1);
 				cars[0].setLayoutY(cars[0].getLayoutY() + 1 );
+				if (cars[0].getLayoutX() < 0 ){
+					outScene = true ; 
+				}
 				
 			}
 			
@@ -68,6 +73,10 @@ public class car extends ObjectInMap implements moveAble{
 	public void checkCrash() {
 		// TODO Auto-generated method stub
 		
+	}
+
+	public boolean isOutScene() {
+		return outScene;
 	}
 	
 	
