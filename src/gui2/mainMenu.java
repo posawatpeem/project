@@ -50,6 +50,8 @@ public class mainMenu  {
 		mainStage.setTitle("Foxxy Road");
 		mainStage.setScene(gameScene);
 		mainStage.setResizable(false);
+		createBackgroundSound();
+		playBackgroundSound();
 		
 		
 	}
@@ -159,5 +161,17 @@ public class mainMenu  {
 		return gameScene;
 	}
 	
+	public void createBackgroundSound() {
+		Resloader.backgroundGameSound.setOnEndOfMedia(new Runnable() {
+			@Override
+			public void run() {
+				Resloader.backgroundGameSound.seek(javafx.util.Duration.ZERO);
+			}
+		});
+	}
+
+	public static void playBackgroundSound() {
+		Resloader.backgroundGameSound.play();
+	}
 	
 }

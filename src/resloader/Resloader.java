@@ -4,6 +4,9 @@ import java.net.URISyntaxException;
 
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.media.AudioClip;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 
 public class Resloader {
 	public static ImageView fox ;  
@@ -17,6 +20,8 @@ public class Resloader {
 	public static Image gameOver_BG;
 	public static Image tree ; 
 	public static Image footpath ;
+	public static MediaPlayer backgroundGameSound;
+	public static AudioClip jumpSound;
 
 	
 	public static void load() {
@@ -31,7 +36,10 @@ public class Resloader {
 		gameOver_BG = new Image(ClassLoader.getSystemResource("gameoverbg.jpg").toString());
 		gameOver = new ImageView(new Image(ClassLoader.getSystemResource("gameover.png").toString())) ; 
 		tree = new Image(ClassLoader.getSystemResource("tree.png").toString()) ; 
-		footpath = new Image(ClassLoader.getSystemResource("footpath.png").toString()) ; 			
+		footpath = new Image(ClassLoader.getSystemResource("footpath.png").toString()) ; 
+		backgroundGameSound = new MediaPlayer(
+				new Media(ClassLoader.getSystemResource("backgroundSound.mp3").toString()));
+		//jumpSound = new AudioClip(ClassLoader.getSystemResource("phaseJump4.wav").toString());
 	}
 	
 }
