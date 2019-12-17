@@ -29,8 +29,12 @@ public  class Map  {
 		Road road2 = new Road(400 , 300) ; 
 		Road road3 = new Road(400 ,300) ; 
 		Road road4 = new Road(400 , 200) ; 
+
 		Road road5 = new Road(400 ,100) ; 
 		Road road6 = new Road(400 , 0) ; 
+
+		//Road road5 = new Road(400 ,100) ; 
+		//Road road6 = new Road(400 , 0) ; 
 		Road road7 = new Road(400 , -100) ; 
 		map.add(foot1) ; 
 		map.add(foot2) ; 
