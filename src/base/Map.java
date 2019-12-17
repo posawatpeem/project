@@ -85,6 +85,7 @@ public  class Map  {
 			map.remove(0) ;
 			PointsPane.setPoints(point++);
 			PointsPane.updateScore();
+			PointsPane.updateHighScore();
 			Road road = new Road(400 , -100,((int)(2+Math.random()*(3-1)))) ; 
 			map.add(road) ; 
 			box.getChildren().add(((Road)map.get(map.size()-1)).getRoads()[0]) ; 
@@ -100,6 +101,7 @@ public  class Map  {
 			map.remove(0) ; 
 			PointsPane.setPoints(point++);
 			PointsPane.updateScore();
+			PointsPane.updateHighScore();
 			footpath footpath = new footpath(400 , -100 , false) ; 
 			map.add(footpath) ; 
 			box.getChildren().add(((footpath)map.get(map.size()-1)).getFootpaths()[0]) ; 
