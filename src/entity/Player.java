@@ -16,13 +16,14 @@ public class Player extends Fox  {
 	private AnimationTimer timer;
 	
 	public Player() {
+		
 		super() ; 
 		this.move();
-		
 		
 	}
 	
 	public void checkOutScene() {
+		
 		if (foxGroup.getLayoutY()>550) {
 			this.outDown =true ; 
 			Fox.setDead(this.outDown);
@@ -44,6 +45,7 @@ public class Player extends Fox  {
 		}else {
 			this.outLeft = false ; 
 		}
+	
 	}
 
 	public boolean isOutUp() {

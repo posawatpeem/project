@@ -34,14 +34,11 @@ public class mainMenu  {
 	private Text scenetitle1;
 	private Text scenetitle2;
 	private AnchorPane mainPane;
-	private VBox titlePane;
 	private VBox buttonPane;
 	private SoundButton soundBtn;
 	public static Stage mainStage;
-	public static Scene gameScene ;
-	private boolean newMenu ; 
+	public static Scene gameScene ; 
 	private howToPlay hT ; 
-	private GameOver gO;
 	
 	public mainMenu () {
 		
@@ -49,7 +46,6 @@ public class mainMenu  {
 		this.createMenu();
 		this.initializeMain();
 		hT = new howToPlay();
-		gO = new GameOver();
 		mainStage = new Stage();
 		mainStage.setTitle("Foxxy Road");
 		mainStage.setScene(gameScene);
@@ -83,7 +79,6 @@ public class mainMenu  {
 			@Override
 			public void handle(ActionEvent event) {
 				mainStage.setScene(hT.getGameScene());
-				//mainStage.setScene(gO.getGameScene());
 				
 			}
 		});

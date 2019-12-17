@@ -2,7 +2,6 @@ package gui2;
 
 import java.util.ArrayList;
 
-import Map.RailRoad;
 import Map.Road;
 import Map.footpath;
 import base.Map;
@@ -10,7 +9,6 @@ import base.car;
 import base.tree;
 import entity.ObjectInMap;
 import entity.Player;
-import entity.Train;
 import javafx.animation.AnimationTimer;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
@@ -29,11 +27,11 @@ import resloader.Resloader;
 import gui2.GameOver;
 
 public class Game {
+	
 	private AnchorPane gamePane ; 
 	private Scene gameScene ; 
 	public static Stage gameStage ; 
 	public static PointsPane pointsLabel;
-	private int point;
 	
 	public static Player player ; 
 	private AnimationTimer Timer ; 

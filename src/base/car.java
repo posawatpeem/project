@@ -13,9 +13,6 @@ import javafx.scene.shape.Rectangle;
 import resloader.Resloader;
 public class car extends ObjectInMap implements Vehicle{
 
-	private static final int velocity1 = 3 ;
-	private static final int velocity2 = 4 ; 
-	private static final int velocity3 = 5 ; 
 	private double yLayout ; 
 	private double xLayout ; 
 	private AnimationTimer timer ; 
@@ -44,7 +41,6 @@ public class car extends ObjectInMap implements Vehicle{
 		} else {
 			cars[0].setFill(new ImagePattern(Resloader.car2)) ; 
 		}
-		//cars[0].setFill(new ImagePattern(Resloader.car)) ; 
 	}
 
 	@Override

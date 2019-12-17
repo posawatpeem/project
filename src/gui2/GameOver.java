@@ -26,7 +26,6 @@ public class GameOver {
 	private Buttons playAgainBtn;
 	private Buttons mainMenuBtn;
 	private HBox buttonPane;
-	private VBox score;
 	private AnchorPane mainPane;
 	public static Stage mainStage;
 	public static Scene gameScene ;
