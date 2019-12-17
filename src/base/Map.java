@@ -15,8 +15,7 @@ import Map.footpath;
 public  class Map  {
 	
 	private ArrayList<ObjectInMap> map ; 
-	private static boolean check ; 
-	private Group groupMap ; 
+	private static boolean check ;  
 	private AnchorPane box ; 
 	private int point;
 	

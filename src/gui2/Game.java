@@ -36,8 +36,7 @@ public class Game {
 	public static Player player ; 
 	private AnimationTimer Timer ; 
 	private AnimationTimer Loop ; 
-	
-	private int size ; 
+	 
 	private Map map ; 
 	
 	private boolean up ;
@@ -45,8 +44,7 @@ public class Game {
 	private boolean left ; 
 	private boolean right ;
 	
-	private Road road1 ; 
-	private Road road2 ; 
+	
 	public Game() {
 		 Resloader.load();
 		 setSceneGame();

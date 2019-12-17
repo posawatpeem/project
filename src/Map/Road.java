@@ -19,13 +19,11 @@ import java.util.ArrayList;
 public class Road  extends ObjectInMap implements moveAble{
 	
 	private ArrayList<car> Car ; 
-	private Thread thread ; 
 	private Rectangle[] roads ; 
 	private AnimationTimer timer ; 
 	private static final int  maxCar = 20 ; 
 	private static final int minCar =10 ;
 	private boolean out ; 
-	private car newCar ; 
 	private ArrayList<Integer> check ; 
 	
 	public Road(double xAxis , double yAxis,int velo ) {

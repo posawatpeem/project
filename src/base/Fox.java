@@ -14,7 +14,6 @@ public abstract class Fox  extends Entity{
 	private static final int Velocity = 10 ; 
 	
 	protected Group foxGroup ; 
-	protected ImageView imageFox ;
 	private static boolean dead ; 
 	
 	public static void setDead(boolean dead) {
