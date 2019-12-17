@@ -31,7 +31,8 @@ import gui2.GameOver;
 public class Game {
 	private AnchorPane gamePane ; 
 	private Scene gameScene ; 
-	public static Stage gameStage ; 
+	public static Stage gameStage ;
+	public static PointsPane pointsLabel;
 	
 	public static Player player ; 
 	private AnimationTimer Timer ; 
@@ -92,15 +93,17 @@ public class Game {
 	public void newGame() {
 		player = new Player() ; 
 		map = new Map(); 
+		pointsLabel = new PointsPane();
 		gamePane.getChildren().add(map.getBox()) ; 
 		gamePane.getChildren().add(player.getFoxGroup()) ; 
+		gamePane.getChildren().add(pointsLabel.getPointsLabel());
 		player.getFoxGroup().toFront();
 	}
 	public void setSceneGame() {
 		 gamePane = new AnchorPane();
 		 gamePane.setBackground(new Background(new BackgroundFill(Color.BLACK, null, null)));
 		 
-		 
+		
 		 gameScene =new Scene(gamePane,400,600) ;
 		 gameStage = new Stage() ; 
 		 gameStage.setTitle("20 Century Fox");
@@ -118,14 +121,16 @@ public class Game {
 				else {
 				
 					if (map.checkOut()) {
-						
+						int point = 0;
 						int random = (int)(Math.random() * (100 - 1 +1 ) +1) ; 
 						if (random % 2 == 0) {
 							map.addfootpath();
+							PointsPane.setPoints(point++);
 							System.out.print(true);
 						}
 						else {
 							map.addRoad();
+							PointsPane.setPoints(point++);
 							System.out.print(false);
 						}
 					}
