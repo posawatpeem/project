@@ -1,6 +1,7 @@
 package entity;
 
 import base.Fox;
+import javafx.animation.AnimationTimer;
 import javafx.scene.Group;
 import javafx.scene.image.ImageView;
 import resloader.Resloader;
@@ -11,16 +12,20 @@ public class Player extends Fox  {
 	private boolean outUp ; 
 	private boolean outDown;
 	private boolean outRight; 
-	private boolean outLeft ; 
+	private boolean outLeft ;
+	private AnimationTimer timer;
 	
 	public Player() {
 		super() ; 
+		this.move();
+		
 		
 	}
 	
 	public void checkOutScene() {
 		if (foxGroup.getLayoutY()>550) {
 			this.outDown =true ; 
+			Fox.setDead(this.outDown);
 		}else {
 			this.outDown = false ; 
 		}
@@ -67,7 +72,20 @@ public class Player extends Fox  {
 	public void setSpawnPosition() {
 		// TODO Auto-generated method stub
 		foxGroup.setLayoutX(200);
-		foxGroup.setLayoutY(550);
+		foxGroup.setLayoutY(430);
+	}
+	
+	public void move() {
+		timer = new AnimationTimer(){
+			@Override
+			public void handle(long arg0) {
+				// TODO Auto-generated method stub
+				foxGroup.setLayoutY(foxGroup.getLayoutY()+1);
+			}
+			
+		};
+		timer.start();
+		
 	}
 	
 	

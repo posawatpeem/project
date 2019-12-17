@@ -2,13 +2,15 @@ package base;
 
 
 import entity.Entity;
+import gui2.Game;
 import javafx.animation.Timeline;
+import javafx.application.Platform;
 import javafx.scene.Group;
 import javafx.scene.image.ImageView;
 
 public abstract class Fox  extends Entity{
 	
-	private static final int Velocity = 3 ; 
+	private static final int Velocity = 10 ; 
 	
 	protected Group foxGroup ; 
 	protected ImageView imageFox ;
@@ -29,22 +31,29 @@ public abstract class Fox  extends Entity{
 
 	public void moveUp() {
 		foxGroup.setLayoutY(foxGroup.getLayoutY() - Velocity);
-	}
+		}
 	
 	public void moveDown() {
 		foxGroup.setLayoutY(foxGroup.getLayoutY() + Velocity);
+		
 	}
 	
 	public void moveRight() {
-		foxGroup.setLayoutX(foxGroup.getLayoutX() + Velocity);
+		foxGroup.setLayoutX(foxGroup.getLayoutX() + 7);
+		
 	}
 
 	public void moveLeft() {
-		foxGroup.setLayoutX(foxGroup.getLayoutX() - Velocity);
+		foxGroup.setLayoutX(foxGroup.getLayoutX() - 7);
+		
 	}
 	
 	public Group getFoxGroup() {
 		return foxGroup;
 	}
+	
+	
+
+	
 
 }
