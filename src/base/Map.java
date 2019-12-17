@@ -14,35 +14,31 @@ import Map.footpath;
 
 public  class Map  {
 	private ArrayList<ObjectInMap> map ; 
-	private boolean check ; 
+	private static boolean check ; 
 	private Group groupMap ; 
-	private AnimationTimer timer ; 
 	private AnchorPane box ; 
-	private AnimationTimer newcar ;
 	
 	public Map() {
 		box = new AnchorPane() ; 
 		map = new ArrayList<ObjectInMap>();
 		this.check = false ; 
-		footpath foot1 = new footpath(400 , 500);
-		footpath foot2 = new footpath(400 , 300);
-		footpath foot3 = new footpath(400 , 100);
-		footpath foot4 = new footpath(400 , 0);
-		Road road2 = new Road(400 , 400) ; 
-		//Road road3 = new Road(400 ,300) ; 
+		footpath foot1 = new footpath(400 , 500 , true);
+		footpath foot2 = new footpath(400 , 400 , true);
+		footpath foot3 = new footpath(400 , 100 , false);
+		footpath foot4 = new footpath(400 , 0 , false);
+		Road road2 = new Road(400 , 300) ; 
+		Road road3 = new Road(400 ,300) ; 
 		Road road4 = new Road(400 , 200) ; 
-		RailRoad rail1 = new RailRoad(400,-100);
-		//Road road5 = new Road(400 ,100) ; 
-		//Road road6 = new Road(400 , 0) ; 
-		//Road road7 = new Road(400 , -100) ; 
+		Road road5 = new Road(400 ,100) ; 
+		Road road6 = new Road(400 , 0) ; 
+		Road road7 = new Road(400 , -100) ; 
 		map.add(foot1) ; 
-		map.add(road2) ; 
 		map.add(foot2) ; 
+		map.add(road2) ; 
 		map.add(road4) ; 
 		map.add(foot3) ; 
 		map.add(foot4) ; 
-		//map.add(road7) ; 
-		map.add(rail1);
+		map.add(road7) ; 
 		for (int i =0 ; i< 7 ;i++) {
 			if (map.get(i) instanceof Road) {
 				box.getChildren().addAll(((Road) map.get(i)).getRoads()[0]) ;
@@ -54,12 +50,6 @@ public  class Map  {
 				box.getChildren().add(((footpath) map.get(i)).getFootpaths()[0]) ;
 				for (tree x :((footpath)map.get(i)).getTree()) {
 					box.getChildren().addAll(x.getTrees()) ; 
-				}
-			}
-			if (map.get(i) instanceof RailRoad) {
-				box.getChildren().addAll(((RailRoad) map.get(i)).getRails()[0]) ;
-				for (Train x : ((RailRoad)map.get(i)).getTrain()) {
-					box.getChildren().addAll(x.getTrain()) ; 
 				}
 			}
 		}
@@ -94,18 +84,20 @@ public  class Map  {
 				box.getChildren().add(x.getCars()[0]) ; 
 			}
 			this.check = false; 
+			System.out.print(1);
 		}
 	}
 	public void addfootpath() {
 		if (this.check) {
 			map.remove(0) ; 
-			footpath footpath = new footpath(400 , -100) ; 
+			footpath footpath = new footpath(400 , -100 , false) ; 
 			map.add(footpath) ; 
 			box.getChildren().add(((footpath)map.get(map.size()-1)).getFootpaths()[0]) ; 
 			for (tree x : footpath.getTree()) {
 				box.getChildren().add(x.getTrees()[0]) ; 
 			}
 			this.check = false; 
+			System.out.print(2);
 		}
 	}
 

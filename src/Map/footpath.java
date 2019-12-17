@@ -15,18 +15,20 @@ import base.tree;
 public class footpath extends ObjectInMap implements moveAble {
 
 	private Rectangle[] footpaths ; 
-	private AnimationTimer timer ; 
+	public static  AnimationTimer timer ; 
 	private ArrayList<tree> Tree ; 
 	private double Y ; 
 	public static final int maxTree =5  ; 
-	public static final int minTree =3 ;
+	public static final int minTree =1 ;
+	private boolean first ; 
 	
 	public ArrayList<tree> getTree() {
 		return Tree;
 	}
 
-	public footpath(double xAxis, double yAxis) {
+	public footpath(double xAxis, double yAxis , boolean first) {
 		super(xAxis, yAxis);
+		this.first = first ; 
 		this.Y = yAxis ; 
 		// TODO Auto-generated constructor stub
 		this.Tree = new ArrayList<tree>() ; 
@@ -81,7 +83,7 @@ public class footpath extends ObjectInMap implements moveAble {
 			int x = (int)(Math.random() * (100 - 1 +1 ) +1) ; 
 			x = x % 20 ; 
 			x = x * 20 ; 
-			tree tree = new tree(x , this.footpaths[0].getLayoutY()) ; 
+			tree tree = new tree(x , this.footpaths[0].getLayoutY(),first) ; 
 			Tree.add(tree) ; 
 		}
 	}

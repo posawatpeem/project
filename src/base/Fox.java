@@ -11,15 +11,22 @@ public abstract class Fox  extends Entity{
 	private static final int Velocity = 5 ; 
 	
 	protected Group foxGroup ; 
-	protected boolean haveLive ; 
 	protected ImageView imageFox ;
-	protected Thread moveThread ; 
+	private static boolean dead ; 
 	
+	public static void setDead(boolean dead) {
+		Fox.dead = dead;
+	}
+
 	public Fox() {
 		super() ; 
-		this.haveLive = true ; 
+		this.dead = false ; 
 	}
 	
+	public boolean isDead() {
+		return dead;
+	}
+
 	public void moveUp() {
 		foxGroup.setLayoutY(foxGroup.getLayoutY() - Velocity);
 	}

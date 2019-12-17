@@ -12,14 +12,15 @@ public class tree extends ObjectInMap implements moveAble {
 	private AnimationTimer timer ; 
 	private Rectangle[] trees ; 
 	private double yLayout ; 
-
+	private boolean first; 
 	
 	public Rectangle[] getTrees() {
 		return trees;
 	}
-	public tree(double x , double y) {
+	public tree(double x , double y , boolean first) {
 		super(x,y) ; 
 		this.move();
+		this.first = first ;
 		
 	}
 	@Override
@@ -51,9 +52,15 @@ public class tree extends ObjectInMap implements moveAble {
 	@Override
 	public void setSpawnPosition(double xAxis ,double yAxis) {
 		// TODO Auto-generated method stub
+		double x = xAxis ; 
+		if (first) {
+			if (xAxis ==200) {
+				x = -100 ; 
+			}
+		}
 		this.yLayout = yAxis ; 
 		trees[0].setLayoutY(yAxis);
-		trees[0].setLayoutX(xAxis);
+		trees[0].setLayoutX(x);
 	
 	}
 

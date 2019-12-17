@@ -4,8 +4,10 @@ import java.util.ArrayList;
 
 import Map.RailRoad;
 import Map.Road;
+import Map.footpath;
 import base.Map;
 import base.car;
+import base.tree;
 import entity.ObjectInMap;
 import entity.Player;
 import entity.Train;
@@ -24,6 +26,7 @@ import javafx.scene.layout.BackgroundSize;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import resloader.Resloader;
+import gui2.GameOver;
 
 public class Game {
 	private AnchorPane gamePane ; 
@@ -109,19 +112,54 @@ public class Game {
 		Loop = new AnimationTimer() {
 			@Override
 			public void handle(long arg0) {
-				// TODO Auto-generated method stub
-				if (map.checkOut()) {
-					int random = (int)(Math.random() * (100 - 1 +1 ) +1) ; 
-					if (random % 2 == 0) {
-						map.addfootpath(); 
+				if (player.isDead()) {
+					Dead();
+				}
+				else {
+				
+					if (map.checkOut()) {
+						
+						int random = (int)(Math.random() * (100 - 1 +1 ) +1) ; 
+						if (random % 2 == 0) {
+							map.addfootpath();
+							System.out.print(true);
+						}
+						else {
+							map.addRoad();
+							System.out.print(false);
+						}
 					}
-					else {
-						map.addRoad();
+					if (!player.isDead()) {
+						for (int i = 0 ; i< 7 ; i++) {
+							if (map.getMap().get(i) instanceof Road) {
+								for (car x : ((Road)map.getMap().get(i)).getCar()) {
+									if (x.getCars()[0].getLayoutX() + 100  >   player.getFoxGroup().getLayoutX()  && x.getCars()[0].getLayoutX()  <    player.getFoxGroup().getLayoutX() || 
+										x.getCars()[0].getLayoutX() + 100  >   player.getFoxGroup().getLayoutX() + 50  && x.getCars()[0].getLayoutX()  <    player.getFoxGroup().getLayoutX()+ 50) {
+										if (x.getCars()[0].getLayoutY() + 100  >   player.getFoxGroup().getLayoutY()  && x.getCars()[0].getLayoutY()  <    player.getFoxGroup().getLayoutY()||
+											x.getCars()[0].getLayoutY() + 100  >   player.getFoxGroup().getLayoutY() +50  && x.getCars()[0].getLayoutY()  <    player.getFoxGroup().getLayoutY() +50) {
+											player.setDead(true);
+											
+										}	
+									}
+								}
+							}else if (map.getMap().get(i) instanceof footpath) {
+								for (tree x : ((footpath)map.getMap().get(i)).getTree()) {
+									if (x.getTrees()[0].getLayoutX() + 40  >   player.getFoxGroup().getLayoutX()  && x.getTrees()[0].getLayoutX()  <    player.getFoxGroup().getLayoutX() || 
+											x.getTrees()[0].getLayoutX() + 40  >   player.getFoxGroup().getLayoutX() + 50  && x.getTrees()[0].getLayoutX()  <    player.getFoxGroup().getLayoutX()+ 50) {
+											if (x.getTrees()[0].getLayoutY() + 100  >   player.getFoxGroup().getLayoutY()  && x.getTrees()[0].getLayoutY()  <    player.getFoxGroup().getLayoutY()||
+												x.getTrees()[0].getLayoutY() + 100  >   player.getFoxGroup().getLayoutY() +50  && x.getTrees()[0].getLayoutY()  <    player.getFoxGroup().getLayoutY() +50) {
+												player.setDead(true);
+
+											}	
+										}
+								}
+							}
+						}
 					}
 				}
 			}
-			
 		};
+		
 		Loop.start();
 		
 	}
@@ -171,5 +209,14 @@ public class Game {
 	public Scene getGameScene() {
 		return gameScene;
 	}
+	
+	public void Dead() {
+		Loop.stop();
+		Timer.stop();
+		GameOver go = new GameOver();
+		gui2.mainMenu.mainStage.setScene(go.getGameScene());
+		
+	}
+	
 
 }

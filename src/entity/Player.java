@@ -8,7 +8,6 @@ import resloader.Resloader;
 public class Player extends Fox  {
 
 	private ImageView fox1 ; 
-	
 	private boolean outUp ; 
 	private boolean outDown;
 	private boolean outRight; 
@@ -16,6 +15,7 @@ public class Player extends Fox  {
 	
 	public Player() {
 		super() ; 
+		
 	}
 	
 	public void checkOutScene() {
@@ -67,7 +67,7 @@ public class Player extends Fox  {
 	public void setSpawnPosition() {
 		// TODO Auto-generated method stub
 		foxGroup.setLayoutX(200);
-		foxGroup.setLayoutY(500);
+		foxGroup.setLayoutY(550);
 	}
 	
 	

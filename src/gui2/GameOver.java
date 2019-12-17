@@ -33,6 +33,7 @@ public class GameOver {
 		mainStage.setTitle("Foxxy Road");
 		mainStage.setScene(gameScene);
 		mainStage.setResizable(false);
+
 	}
 	
 	public void createMenu() {
@@ -50,7 +51,7 @@ public class GameOver {
 			@Override
 			public void handle(ActionEvent event) {
 				Game g = new Game(); 
-				mainStage.setScene(g.getGameScene());
+				gui2.mainMenu.mainStage.setScene(g.getGameScene());
 				
 			}
 		});
