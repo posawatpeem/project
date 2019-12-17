@@ -32,6 +32,8 @@ public class Game {
 	private AnchorPane gamePane ; 
 	private Scene gameScene ; 
 	public static Stage gameStage ; 
+	public static PointsPane pointsLabel;
+	private int point;
 	
 	public static Player player ; 
 	private AnimationTimer Timer ; 
@@ -92,8 +94,10 @@ public class Game {
 	public void newGame() {
 		player = new Player() ; 
 		map = new Map(); 
+		pointsLabel = new PointsPane(); 
 		gamePane.getChildren().add(map.getBox()) ; 
 		gamePane.getChildren().add(player.getFoxGroup()) ; 
+		gamePane.getChildren().add(pointsLabel.getPointsLabel());
 		player.getFoxGroup().toFront();
 	}
 	public void setSceneGame() {
@@ -117,13 +121,16 @@ public class Game {
 				}
 				else {
 					if (map.checkOut()) {
+						point =0;
 						int random = (int)(Math.random() * (100 - 1 +1 ) +1) ; 
 						if (random % 2 == 0) {
 							map.addfootpath();
+							PointsPane.setPoints(point++);
 							System.out.print(true);
 						}
 						else {
 							map.addRoad();
+							PointsPane.setPoints(point++);
 							System.out.print(false);
 						}
 					}
