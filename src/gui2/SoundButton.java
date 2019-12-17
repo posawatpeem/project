@@ -60,9 +60,11 @@ public class SoundButton extends Button{
 				if (getPrefWidth()==50) {
 					setPrefHeight(30);
 					setPrefWidth(30);
+					mainMenu.pauseBackgroundSound();
 				} else {
 					setPrefHeight(50);
 					setPrefWidth(50);
+					mainMenu.playBackgroundSound();
 				}
 				
 			}

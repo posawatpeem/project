@@ -161,7 +161,7 @@ public class mainMenu  {
 		return gameScene;
 	}
 	
-	/*(public void createBackgroundSound() {
+	public void createBackgroundSound() {
 		Resloader.backgroundGameSound.setOnEndOfMedia(new Runnable() {
 			@Override
 			public void run() {
@@ -172,6 +172,10 @@ public class mainMenu  {
 
 	public static void playBackgroundSound() {
 		Resloader.backgroundGameSound.play();
-	}*/
+	}
+	
+	public static void pauseBackgroundSound() {
+		Resloader.backgroundGameSound.pause();
+	}
 	
 }
