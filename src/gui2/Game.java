@@ -121,16 +121,17 @@ public class Game {
 				}
 				else {
 					if (map.checkOut()) {
-						point =0;
 						int random = (int)(Math.random() * (100 - 1 +1 ) +1) ; 
 						if (random % 2 == 0) {
 							map.addfootpath();
-							PointsPane.setPoints(point++);
+							//PointsPane.setPoints(point++);
+							//PointsPane.updateScore();
 							System.out.print(true);
 						}
 						else {
 							map.addRoad();
-							PointsPane.setPoints(point++);
+							//PointsPane.setPoints(point++);
+							//PointsPane.updateScore();
 							System.out.print(false);
 						}
 					}

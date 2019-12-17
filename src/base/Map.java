@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Random;
 import entity.ObjectInMap;
 import entity.Train;
+import gui2.PointsPane;
 import javafx.animation.AnimationTimer;
 import javafx.scene.Group;
 import javafx.scene.layout.AnchorPane;
@@ -17,6 +18,7 @@ public  class Map  {
 	private static boolean check ; 
 	private Group groupMap ; 
 	private AnchorPane box ; 
+	private int point;
 	
 	public Map() {
 		box = new AnchorPane() ; 
@@ -80,7 +82,9 @@ public  class Map  {
 	
 	public void addRoad() {
 		if (this.check) {
-			map.remove(0) ; 
+			map.remove(0) ;
+			PointsPane.setPoints(point++);
+			PointsPane.updateScore();
 			Road road = new Road(400 , -100,((int)(2+Math.random()*(3-1)))) ; 
 			map.add(road) ; 
 			box.getChildren().add(((Road)map.get(map.size()-1)).getRoads()[0]) ; 
@@ -94,6 +98,8 @@ public  class Map  {
 	public void addfootpath() {
 		if (this.check) {
 			map.remove(0) ; 
+			PointsPane.setPoints(point++);
+			PointsPane.updateScore();
 			footpath footpath = new footpath(400 , -100 , false) ; 
 			map.add(footpath) ; 
 			box.getChildren().add(((footpath)map.get(map.size()-1)).getFootpaths()[0]) ; 

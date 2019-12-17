@@ -1,5 +1,7 @@
 package base;
 
+import java.util.Random;
+
 import entity.Entity;
 import entity.ObjectInMap;
 import javafx.animation.AnimationTimer;
@@ -36,7 +38,13 @@ public class car extends ObjectInMap implements Vehicle{
 		// TODO Auto-generated method stub
 		cars = new Rectangle[1] ;
 		cars[0] = new Rectangle(100,100) ;
-		cars[0].setFill(new ImagePattern(Resloader.car)) ; 
+		Random rand = new Random();
+		if (rand.nextInt(2)==0) {
+			cars[0].setFill(new ImagePattern(Resloader.car)) ; 
+		} else {
+			cars[0].setFill(new ImagePattern(Resloader.car2)) ; 
+		}
+		//cars[0].setFill(new ImagePattern(Resloader.car)) ; 
 	}
 
 	@Override

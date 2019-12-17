@@ -42,6 +42,7 @@ public class Road  extends ObjectInMap implements moveAble{
 		roads[0] = new Rectangle(400, 100) ; 
 		roads[0].setFill(new ImagePattern(Resloader.road));
 		
+		
 	}
 
 

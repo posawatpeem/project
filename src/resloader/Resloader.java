@@ -12,6 +12,7 @@ public class Resloader {
 	public static ImageView rail ; 
 	public static Image rail2 ; 
 	public static Image car ; 
+	public static Image car2 ; 
 	public static ImageView river ; 
 	public static Image road ; 
 	public static ImageView exitButt ;
@@ -29,6 +30,7 @@ public class Resloader {
 		fox = new ImageView(new Image(ClassLoader.getSystemResource("fox1.png").toString())) ; 
 		MAIN_BG = new Image(ClassLoader.getSystemResource("background.jpg").toString());
 		car = new Image(ClassLoader.getSystemResource("car.png").toString()) ; 
+		car2 = new Image(ClassLoader.getSystemResource("car2.png").toString()) ; 
 		muteBtn = new Image(ClassLoader.getSystemResource("volume.png").toString(),30,30,true,true) ; 
 		road = new Image(ClassLoader.getSystemResource("road.jpg").toString());
 		rail2 = (new Image(ClassLoader.getSystemResource("rail2.png").toString()));
@@ -36,7 +38,7 @@ public class Resloader {
 		howTo_BG = (new Image(ClassLoader.getSystemResource("howTobg.jpg").toString()));
 		exitButt = new ImageView(new Image(ClassLoader.getSystemResource("exit2.png").toString(),35,35,true,true)) ; 
 		grass_BG = new Image(ClassLoader.getSystemResource("grassBg.png").toString());
-		gameOver_BG = new Image(ClassLoader.getSystemResource("window.jpg").toString());
+		gameOver_BG = new Image(ClassLoader.getSystemResource("gameoverbg.jpg").toString());
 		gameOver = new ImageView(new Image(ClassLoader.getSystemResource("gameover.png").toString())) ; 
 		tree = new Image(ClassLoader.getSystemResource("tree.png").toString()) ; 
 		footpath = new Image(ClassLoader.getSystemResource("footpath.png").toString()) ; 
