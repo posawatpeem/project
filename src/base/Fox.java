@@ -7,6 +7,7 @@ import javafx.animation.Timeline;
 import javafx.application.Platform;
 import javafx.scene.Group;
 import javafx.scene.image.ImageView;
+import resloader.Resloader;
 
 public abstract class Fox  extends Entity{
 	
@@ -31,7 +32,7 @@ public abstract class Fox  extends Entity{
 
 	public void moveUp() {
 		foxGroup.setLayoutY(foxGroup.getLayoutY() - Velocity);
-		}
+	}
 	
 	public void moveDown() {
 		foxGroup.setLayoutY(foxGroup.getLayoutY() + Velocity);
