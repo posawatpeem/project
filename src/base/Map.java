@@ -23,7 +23,7 @@ public  class Map  {
 		map = new ArrayList<ObjectInMap>();
 		this.check = false ; 
 		footpath foot1 = new footpath(400 , 500 , true);
-		footpath foot2 = new footpath(400 , 400 , true);
+		footpath foot2 = new footpath(400 , 400 , false);
 		footpath foot3 = new footpath(400 , 100 , false);
 		footpath foot4 = new footpath(400 , 0 , false);
 		Road road2 = new Road(400 , 300,((int)(2+Math.random()*(3-1)))) ; 

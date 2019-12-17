@@ -78,14 +78,19 @@ public class footpath extends ObjectInMap implements moveAble {
 		
 	}
 	public void createTree() {
-		int numTree = (int)((Math.random() * (maxTree - minTree +1)) +minTree) ; 
-		for (int i = 0 ; i < numTree ;i++) {
-			int x = (int)(Math.random() * (100 - 1 +1 ) +1) ; 
-			x = x % 20 ; 
-			x = x * 20 ; 
-			tree tree = new tree(x , this.footpaths[0].getLayoutY(),first) ; 
-			Tree.add(tree) ; 
+		if (first) {
+			
+		}else {
+			int numTree = (int)((Math.random() * (maxTree - minTree +1)) +minTree) ; 
+			for (int i = 0 ; i < numTree ;i++) {
+				int x = (int)(Math.random() * (100 - 1 +1 ) +1) ; 
+				x = x % 20 ; 
+				x = x * 20 ; 
+				tree tree = new tree(x , this.footpaths[0].getLayoutY(),first) ; 
+				Tree.add(tree) ; 
+			}
 		}
+		
 	}
 
 }
