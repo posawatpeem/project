@@ -15,6 +15,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Rectangle;
 import resloader.Resloader;
+import java.util.ArrayList;
 public class Road  extends ObjectInMap implements moveAble{
 	
 	private ArrayList<car> Car ; 
@@ -25,6 +26,7 @@ public class Road  extends ObjectInMap implements moveAble{
 	private static final int minCar =10 ;
 	private boolean out ; 
 	private car newCar ; 
+	private ArrayList<Integer> check ; 
 	
 	public Road(double xAxis , double yAxis,int velo ) {
 		super(xAxis ,yAxis) ; 
@@ -58,14 +60,18 @@ public class Road  extends ObjectInMap implements moveAble{
 	public void createCar(int velo) { 
 		int numCar = (int) ((Math.random() * (maxCar - minCar +1)) +minCar) ; 
 		int randomX = 50 ;
+		check = new ArrayList<Integer>() ; 
 		for (int i = 0 ; i < numCar ; i++) {
 			int X = (int)((Math.random() * (100 -1 +1 ))+1) ;
 			randomX= randomX+X ; 
 			randomX = randomX%50 ; 
 			randomX =randomX*100;
-			car car1 = new car(randomX , this.roads[0].getLayoutY(),velo) ; 
-			Car.add(car1) ;
-		 
+			if (!check.contains(randomX)) {
+				car car1 = new car(randomX , this.roads[0].getLayoutY(),velo) ; 
+				check.add(randomX) ; 
+				Car.add(car1) ;
+			 
+			}
 		}
 		
 	}
