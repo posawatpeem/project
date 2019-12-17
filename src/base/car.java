@@ -9,7 +9,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Rectangle;
 import resloader.Resloader;
-public class car extends ObjectInMap implements moveAble{
+public class car extends ObjectInMap implements Vehicle{
 
 	private static final int velocity1 = 3 ;
 	private static final int velocity2 = 4 ; 
@@ -20,9 +20,9 @@ public class car extends ObjectInMap implements moveAble{
 	private Rectangle[] cars ; 
 	private boolean outScene ; 
 	
-	public car(double x , double y) {
+	public car(double x , double y,int velo) {
 		super(x , y) ; 
-		this.move() ;
+		this.move(velo) ;
 		this.outScene = false ; 
 		
 	}
@@ -50,13 +50,13 @@ public class car extends ObjectInMap implements moveAble{
 
 	
 	@Override
-	public void move() {
+	public void move(int velo) {
 		// TODO Auto-generated method stub
 		timer = new AnimationTimer() {
 			@Override
 			public void handle(long arg0) {
 				// TODO Auto-generated method stub
-				cars[0].setLayoutX(cars[0].getLayoutX() - velocity1);
+				cars[0].setLayoutX(cars[0].getLayoutX() - velo);
 				cars[0].setLayoutY(cars[0].getLayoutY() + 1 );
 				if (cars[0].getLayoutX() < 0 ){
 					outScene = true ; 

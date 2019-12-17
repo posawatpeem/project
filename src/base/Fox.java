@@ -8,7 +8,7 @@ import javafx.scene.image.ImageView;
 
 public abstract class Fox  extends Entity{
 	
-	private static final int Velocity = 5 ; 
+	private static final int Velocity = 3 ; 
 	
 	protected Group foxGroup ; 
 	protected ImageView imageFox ;

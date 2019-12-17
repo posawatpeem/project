@@ -26,16 +26,16 @@ public  class Map  {
 		footpath foot2 = new footpath(400 , 400 , true);
 		footpath foot3 = new footpath(400 , 100 , false);
 		footpath foot4 = new footpath(400 , 0 , false);
-		Road road2 = new Road(400 , 300) ; 
-		Road road3 = new Road(400 ,300) ; 
-		Road road4 = new Road(400 , 200) ; 
+		Road road2 = new Road(400 , 300,((int)(2+Math.random()*(3-1)))) ; 
+		Road road3 = new Road(400 ,300,((int)(2+Math.random()*(3-1)))) ; 
+		Road road4 = new Road(400 , 200,((int)(2+Math.random()*(3-1)))) ; 
 
-		Road road5 = new Road(400 ,100) ; 
-		Road road6 = new Road(400 , 0) ; 
+		Road road5 = new Road(400 ,100,((int)(2+Math.random()*(3-1)))) ; 
+		Road road6 = new Road(400 , 0,((int)(2+Math.random()*(3-1)))) ; 
 
 		//Road road5 = new Road(400 ,100) ; 
 		//Road road6 = new Road(400 , 0) ; 
-		Road road7 = new Road(400 , -100) ; 
+		Road road7 = new Road(400 , -100,((int)(2+Math.random()*(3-1)))) ; 
 		map.add(foot1) ; 
 		map.add(foot2) ; 
 		map.add(road2) ; 
@@ -81,7 +81,7 @@ public  class Map  {
 	public void addRoad() {
 		if (this.check) {
 			map.remove(0) ; 
-			Road road = new Road(400 , -100) ; 
+			Road road = new Road(400 , -100,((int)(2+Math.random()*(3-1)))) ; 
 			map.add(road) ; 
 			box.getChildren().add(((Road)map.get(map.size()-1)).getRoads()[0]) ; 
 			for (car x : road.getCar()) {

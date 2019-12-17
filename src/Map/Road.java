@@ -26,11 +26,11 @@ public class Road  extends ObjectInMap implements moveAble{
 	private boolean out ; 
 	private car newCar ; 
 	
-	public Road(double xAxis , double yAxis ) {
+	public Road(double xAxis , double yAxis,int velo ) {
 		super(xAxis ,yAxis) ; 
 		this.out = false ;
 		this.Car = new ArrayList<car>()  ;  
-		this.createCar();
+		this.createCar(velo);
 		this.move();
 		
 	}
@@ -54,7 +54,7 @@ public class Road  extends ObjectInMap implements moveAble{
 	}
 	
 	
-	public void createCar() { 
+	public void createCar(int velo) { 
 		int numCar = (int) ((Math.random() * (maxCar - minCar +1)) +minCar) ; 
 		int randomX = 50 ;
 		for (int i = 0 ; i < numCar ; i++) {
@@ -62,7 +62,7 @@ public class Road  extends ObjectInMap implements moveAble{
 			randomX= randomX+X ; 
 			randomX = randomX%50 ; 
 			randomX =randomX*100;
-			car car1 = new car(randomX , this.roads[0].getLayoutY()) ; 
+			car car1 = new car(randomX , this.roads[0].getLayoutY(),velo) ; 
 			Car.add(car1) ;
 		 
 		}
