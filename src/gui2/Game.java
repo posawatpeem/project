@@ -55,8 +55,8 @@ public class Game {
 		 playerMove();
 		 createLoop();
 		 
-		if (SoundButton.isMuteSound()== true) {
-			mainMenu.pauseBackgroundSound();
+		if (SoundButton.isMuteSound() == true) {
+			//mainMenu.stopBackgroundSound();
 		} else {
 			mainMenu.playBackgroundSound();
 		}
@@ -231,7 +231,6 @@ public class Game {
 		
 	}
 	
-	public int x;
 	
 
 }
