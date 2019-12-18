@@ -50,8 +50,8 @@ public class mainMenu  {
 		mainStage.setTitle("Foxxy Road");
 		mainStage.setScene(gameScene);
 		mainStage.setResizable(false);
-		//createBackgroundSound();
-		//playBackgroundSound();
+		createBackgroundSound();
+		playBackgroundSound();
 		
 		
 	}

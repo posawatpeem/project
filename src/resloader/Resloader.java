@@ -36,7 +36,7 @@ public class Resloader {
 		gameOver = new ImageView(new Image(ClassLoader.getSystemResource("gameover.png").toString())) ; 
 		tree = new Image(ClassLoader.getSystemResource("tree.png").toString()) ; 
 		footpath = new Image(ClassLoader.getSystemResource("footpath.png").toString()) ; 
-		//backgroundGameSound = new MediaPlayer(new Media(ClassLoader.getSystemResource("bgSound.mp3").toString()));
+		backgroundGameSound = new MediaPlayer(new Media(ClassLoader.getSystemResource("bgSound.mp3").toString()));
 	}
 	
 }
