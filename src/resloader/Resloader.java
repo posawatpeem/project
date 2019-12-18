@@ -21,6 +21,7 @@ public class Resloader {
 	public static Image tree ; 
 	public static Image footpath ;
 	public static MediaPlayer backgroundGameSound;
+	public static AudioClip jumpSound;
 
 	
 	public static void load() {
@@ -37,6 +38,7 @@ public class Resloader {
 		tree = new Image(ClassLoader.getSystemResource("tree.png").toString()) ; 
 		footpath = new Image(ClassLoader.getSystemResource("footpath.png").toString()) ; 
 		backgroundGameSound = new MediaPlayer(new Media(ClassLoader.getSystemResource("bgSound.mp3").toString()));
+		jumpSound = new AudioClip(ClassLoader.getSystemResource("phaseJump4.wav").toString());
 	}
 	
 }

@@ -22,8 +22,9 @@ public class SoundButton extends Button{
 		this.setPrefHeight(BUTTON_HEIGHT);
 		this.setPrefWidth(BUTTON_WIDTH);
 		this.setGraphic(this.btnBg);
-		this.setStyle("-fx-background-color: #FEAD32");
+		this.setStyle("-fx-background-color: transparent");
 		this.initializedButton();
+		
 		this.setMuteSound(false);
 		
 	}

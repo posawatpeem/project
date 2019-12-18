@@ -47,6 +47,7 @@ public class Game {
 	
 	
 	public Game() throws ExceptionCreate {
+		
 		 Resloader.load();
 		 setSceneGame();
 		 newGame();
@@ -54,12 +55,7 @@ public class Game {
 		 createKeyListener();
 		 playerMove();
 		 createLoop();
-		 
-		if (SoundButton.isMuteSound() == true) {
-			//mainMenu.stopBackgroundSound();
-		} else {
-			mainMenu.playBackgroundSound();
-		}
+		
 		 
 		  
 	}
@@ -98,7 +94,8 @@ public class Game {
 	public void newGame() throws ExceptionCreate {
 		player = new Player() ; 
 		map = new Map(); 
-		pointsLabel = new PointsPane(); 
+		pointsLabel = new PointsPane();
+		mainMenu.playBackgroundSound();
 		gamePane.getChildren().add(map.getBox()) ; 
 		gamePane.getChildren().add(player.getFoxGroup()) ; 
 		gamePane.getChildren().add(pointsLabel.getPointsLabel());
@@ -107,6 +104,7 @@ public class Game {
 	public void setSceneGame() {
 		 gamePane = new AnchorPane();
 		 gamePane.setBackground(new Background(new BackgroundFill(Color.BLACK, null, null)));
+		 
 		 
 		 
 		 gameScene =new Scene(gamePane,400,600) ;
@@ -183,15 +181,19 @@ public class Game {
 				// TODO Auto-generated method stub
 				if (event.getCode() == KeyCode.UP) {
 					up = true ; 
+					 Resloader.jumpSound.play();
 				}
 				else if (event.getCode() == KeyCode.DOWN) {
 					down = true ;
+					 Resloader.jumpSound.play();
 				}
 				else if (event.getCode() == KeyCode.LEFT) {
 					left =true ;
+					 Resloader.jumpSound.play();
 				}
 				else if (event.getCode() == KeyCode.RIGHT) {
 					right = true ;
+					 Resloader.jumpSound.play();
 				}
 			}
 			 

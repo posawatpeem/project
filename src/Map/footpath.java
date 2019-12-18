@@ -18,7 +18,7 @@ public class footpath extends ObjectInMap implements moveAble {
 	public static  AnimationTimer timer ; 
 	private ArrayList<tree> Tree ; 
 	private double Y ; 
-	public static final int maxTree =5  ; 
+	public static final int maxTree =4  ; 
 	public static final int minTree =1 ;
 	private boolean first ; 
 	

@@ -36,7 +36,6 @@ public class mainMenu  {
 	private Text scenetitle2;
 	private AnchorPane mainPane;
 	private VBox buttonPane;
-	private SoundButton soundBtn;
 	public static Stage mainStage;
 	public static Scene gameScene ; 
 	private howToPlay hT ; 
@@ -53,12 +52,6 @@ public class mainMenu  {
 		mainStage.setResizable(false);
 		createBackgroundSound();
 		
-		if (SoundButton.isMuteSound()== true) {
-			mainMenu.stopBackgroundSound();
-		} else {
-			mainMenu.playBackgroundSound();
-		}
-		
 		
 	}
 	
@@ -66,8 +59,7 @@ public class mainMenu  {
 	public void createMenu() {
 		mainPane = new AnchorPane();
 		this.initializeButton();
-		this.initializeTitle();
-		this.initializeSoundButton();
+		this.initializeTitle();	
 		this.createBg();
 		gameScene = new Scene(mainPane,GameSetting.Game_width,GameSetting.Game_height);
 		
@@ -81,7 +73,6 @@ public class mainMenu  {
 				Game g = null;
 				try {
 					g = new Game();
-					mainMenu.stopBackgroundSound();
 				} catch (ExceptionCreate e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
@@ -146,20 +137,7 @@ public class mainMenu  {
 		mainPane.getChildren().addAll(this.scenetitle1,this.scenetitle2);
 		
 	}
-	
-	private void initializeSoundButton() {
-		
-		this.soundBtn = new SoundButton();
-		
-		this.soundBtn.setLayoutX(320);
-		this.soundBtn.setLayoutY(20);
-		
-		
-		mainPane.getChildren().add(this.soundBtn);
-		
-		
-	}
-	
+
 	
 	private void createBg() {
 		
