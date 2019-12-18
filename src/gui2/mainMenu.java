@@ -2,6 +2,7 @@ package gui2;
 
 import java.net.URISyntaxException;
 
+import Map.ExceptionCreate;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
@@ -72,7 +73,13 @@ public class mainMenu  {
 		this.playBtn.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent event) {
-				Game g = new Game(); 
+				Game g = null;
+				try {
+					g = new Game();
+				} catch (ExceptionCreate e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				} 
 				mainStage.setScene(g.getGameScene());
 				
 			}

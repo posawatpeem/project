@@ -9,6 +9,7 @@ import javafx.animation.AnimationTimer;
 import javafx.scene.Group;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
+import Map.ExceptionCreate;
 import Map.Road;
 import Map.footpath;  
 
@@ -19,7 +20,7 @@ public  class Map  {
 	private AnchorPane box ; 
 	private int point;
 	
-	public Map() {
+	public Map() throws ExceptionCreate {
 		
 		box = new AnchorPane() ; 
 		map = new ArrayList<ObjectInMap>();
@@ -77,7 +78,7 @@ public  class Map  {
 		
 	}
 	
-	public void addRoad() {
+	public void addRoad() throws ExceptionCreate {
 		
 		if (this.check) {
 			

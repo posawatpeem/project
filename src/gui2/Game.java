@@ -2,6 +2,7 @@ package gui2;
 
 import java.util.ArrayList;
 
+import Map.ExceptionCreate;
 import Map.Road;
 import Map.footpath;
 import base.Map;
@@ -45,7 +46,7 @@ public class Game {
 	private boolean right ;
 	
 	
-	public Game() {
+	public Game() throws ExceptionCreate {
 		 Resloader.load();
 		 setSceneGame();
 		 newGame();
@@ -87,7 +88,7 @@ public class Game {
 		 Timer.start();
 	}
 	
-	public void newGame() {
+	public void newGame() throws ExceptionCreate {
 		player = new Player() ; 
 		map = new Map(); 
 		pointsLabel = new PointsPane(); 
@@ -123,7 +124,12 @@ public class Game {
 							System.out.print(true);
 						}
 						else {
-							map.addRoad();
+							try {
+								map.addRoad();
+							} catch (ExceptionCreate e) {
+								// TODO Auto-generated catch block
+								e.printStackTrace();
+							}
 							System.out.print(false);
 						}
 					}
