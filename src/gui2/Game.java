@@ -54,6 +54,13 @@ public class Game {
 		 playerMove();
 		 createLoop();
 		 
+		if (SoundButton.isMuteSound()== true) {
+			mainMenu.pauseBackgroundSound();
+		} else {
+			mainMenu.playBackgroundSound();
+		}
+		 
+		  
 	}
 	public void playerMove() {
 		Timer = new AnimationTimer() {
@@ -211,8 +218,10 @@ public class Game {
 	public void Dead() {
 		Loop.stop();
 		Timer.stop();
+		mainMenu.stopBackgroundSound();
 		GameOver go = new GameOver();
 		gui2.mainMenu.mainStage.setScene(go.getGameScene());
+		
 		
 	}
 	

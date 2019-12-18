@@ -51,7 +51,13 @@ public class mainMenu  {
 		mainStage.setScene(gameScene);
 		mainStage.setResizable(false);
 		createBackgroundSound();
-		playBackgroundSound();
+		//playBackgroundSound();
+		
+		if (SoundButton.isMuteSound()== true) {
+			mainMenu.pauseBackgroundSound();
+		} else {
+			mainMenu.playBackgroundSound();
+		}
 		
 		
 	}
@@ -73,6 +79,7 @@ public class mainMenu  {
 			@Override
 			public void handle(ActionEvent event) {
 				Game g = new Game(); 
+				mainMenu.stopBackgroundSound();
 				mainStage.setScene(g.getGameScene());
 				
 			}
@@ -172,10 +179,15 @@ public class mainMenu  {
 
 	public static void playBackgroundSound() {
 		Resloader.backgroundGameSound.play();
+		Resloader.backgroundGameSound.setVolume(0.5);
+	}
+	
+	
+	public static void stopBackgroundSound() {
+		Resloader.backgroundGameSound.stop();
 	}
 	
 	public static void pauseBackgroundSound() {
 		Resloader.backgroundGameSound.pause();
 	}
-	
 }

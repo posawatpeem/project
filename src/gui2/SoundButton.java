@@ -10,47 +10,24 @@ import javafx.scene.media.AudioClip;
 import resloader.Resloader;
 
 public class SoundButton extends Button{
-	private static boolean SoundOn ; 
-	private AudioClip song ; 
+	
 	private final ImageView btnBg;
 	private static final int BUTTON_HEIGHT = 50;
 	private static final int BUTTON_WIDTH = 50;
+	private static boolean muteSound;
 	
 	public SoundButton() {
-		this.SoundOn = true ; 
+		 
 		this.btnBg = new ImageView(Resloader.muteBtn);
 		this.setPrefHeight(BUTTON_HEIGHT);
 		this.setPrefWidth(BUTTON_WIDTH);
 		this.setGraphic(this.btnBg);
 		this.setStyle("-fx-background-color: #FEAD32");
 		this.initializedButton();
+		this.setMuteSound(false);
 		
 	}
 	
-	public void Mute() {
-		this.SoundOn = false ; 
-		this.stopSound();
-	}
-	
-	public void UnMute() {
-		this.SoundOn = true ; 
-		this.playSound(); 
-	}
-	public static boolean IsSoundOn() {
-		return SoundOn ; 
-	}
-	
-	public void playSound() {
-		if (IsSoundOn()) {
-			this.song.play(); 
-		}
-	}
-	
-	public void stopSound() {
-		if (!IsSoundOn()) {
-			this.song.stop();
-		}
-	}
 	
 	private void initializedButton() {
 		
@@ -61,6 +38,7 @@ public class SoundButton extends Button{
 					setPrefHeight(30);
 					setPrefWidth(30);
 					mainMenu.pauseBackgroundSound();
+					setMuteSound(true);
 				} else {
 					setPrefHeight(50);
 					setPrefWidth(50);
@@ -85,4 +63,16 @@ public class SoundButton extends Button{
 			}
 		});
 	}
+
+
+	public static boolean isMuteSound() {
+		return muteSound;
+	}
+
+
+	public static void setMuteSound(boolean muteSound) {
+		muteSound = false;
+	}
+	
+	
 }
