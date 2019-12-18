@@ -225,5 +225,7 @@ public class Game {
 		
 	}
 	
+	public int x;
+	
 
 }
