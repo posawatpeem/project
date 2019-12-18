@@ -1,5 +1,6 @@
 package gui2;
 
+import Map.ExceptionCreate;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Pos;
@@ -57,7 +58,13 @@ public class GameOver {
 		this.playAgainBtn.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent event) {
-				Game g = new Game(); 
+				Game g = null;
+				try {
+					g = new Game();
+				} catch (ExceptionCreate e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				} 
 				gui2.mainMenu.mainStage.setScene(g.getGameScene());
 				
 			}

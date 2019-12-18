@@ -2,6 +2,7 @@ package gui2;
 
 import java.net.URISyntaxException;
 
+import Map.ExceptionCreate;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
@@ -78,8 +79,18 @@ public class mainMenu  {
 		this.playBtn.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent event) {
+<<<<<<< HEAD
 				Game g = new Game(); 
 				mainMenu.stopBackgroundSound();
+=======
+				Game g = null;
+				try {
+					g = new Game();
+				} catch (ExceptionCreate e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				} 
+>>>>>>> branch 'master' of https://github.com/2110215-ProgMeth/project-2019-1-20_centuryfox.git
 				mainStage.setScene(g.getGameScene());
 				
 			}

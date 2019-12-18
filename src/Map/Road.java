@@ -26,7 +26,7 @@ public class Road  extends ObjectInMap implements moveAble{
 	private boolean out ; 
 	private ArrayList<Integer> check ; 
 	
-	public Road(double xAxis , double yAxis,int velo ) {
+	public Road(double xAxis , double yAxis,int velo ) throws ExceptionCreate {
 		super(xAxis ,yAxis) ; 
 		this.out = false ;
 		this.Car = new ArrayList<car>()  ;  
@@ -55,23 +55,32 @@ public class Road  extends ObjectInMap implements moveAble{
 	}
 	
 	
-	public void createCar(int velo) { 
+	public void createCar(int velo) throws ExceptionCreate { 
 		int numCar = (int) ((Math.random() * (maxCar - minCar +1)) +minCar) ; 
 		int randomX = 50 ;
 		check = new ArrayList<Integer>() ; 
-		for (int i = 0 ; i < numCar ; i++) {
+		int i = 0 ;
+		while (i < numCar) {
 			int X = (int)((Math.random() * (100 -1 +1 ))+1) ;
 			randomX= randomX+X ; 
 			randomX = randomX%50 ; 
 			randomX =randomX*100;
-			if (!check.contains(randomX)) {
+			try {
+				checkRecreate(randomX);
 				car car1 = new car(randomX , this.roads[0].getLayoutY(),velo) ; 
 				check.add(randomX) ; 
 				Car.add(car1) ;
-			 
+			}catch(ExceptionCreate e){
+				i = i -1 ; 
 			}
+			i++ ; 
 		}
 		
+	}
+	public void checkRecreate(int x) throws ExceptionCreate {
+		if (check.contains(x)) {
+			throw new ExceptionCreate("recreate") ; 
+		}
 	}
 
 
