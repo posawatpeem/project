@@ -79,10 +79,6 @@ public class mainMenu  {
 		this.playBtn.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent event) {
-<<<<<<< HEAD
-				Game g = new Game(); 
-				mainMenu.stopBackgroundSound();
-=======
 				Game g = null;
 				try {
 					g = new Game();
@@ -90,7 +86,7 @@ public class mainMenu  {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				} 
->>>>>>> branch 'master' of https://github.com/2110215-ProgMeth/project-2019-1-20_centuryfox.git
+				mainMenu.stopBackgroundSound();
 				mainStage.setScene(g.getGameScene());
 				
 			}
